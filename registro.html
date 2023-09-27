@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro-GameScape</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="" alt="logo"></a>
+        <a href="index.html"><h1>GameScape</h1></a>
+    </header>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="buscar.html">BUSCAR</a></li>
+            <li><a href="registro.html">REGISTRO</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <form action="index_identificado.html">
+            <h2>REGISTRO</h2>
+            <p><label for="nombre">NOMBRE<input type="text" name="nombre" id="nombre" required></label></p>
+            <p><label for="pwd">CONTRASEÑA<input type="password" name="pwd" id="pwd" required></label></p>
+            <p><label for="pwd2">REPETIR CONTRASEÑA<input type="password" name="pwd2" id="pwd2" required></label></p>
+            <p><label for="email">CORREO ELECTRÓNICO<input type="email" name="email" id="email" required></label></p>
+            <p><label for="sexo">SEXO<input type="text" name="sexo" id="sexo" required></label></p>
+            <p><label for="fecha">FECHA DE NACIMIENTO<input type="datetime" name="fecha" id="fecha" required></label></p>
+            <p><label for="ciudad">CIUDAD<input type="text" name="ciudad" id="fecha" required></label></p>
+            <p>
+                <label for="pais">
+                    PAÍS DE RESIDENCIA
+                    <select name="pais" id="pais">
+                        <option value="276">Alemania</option>
+                        <option value=020">Andorra</option>
+                        <option value="124">Canadá</option>
+                        <option value="152">Chile</option>
+                        <option value="156">China</option>
+                        <option value="192">Cuba</option>
+                        <option value="724">España</option>
+                        <option value="250">Francia</option>
+                        <option value="300">Grecia</option>
+                        <option value="392">Japón</option>
+                    </select>
+                </label>
+            </p>
+            <p><label for="foto">FOTO<input type="file" name="foto" id="foto" accept="image/*" required></label></p>
+
+            <p><input type="submit" value="Registrarse"></p>
+        </form>
+    </main>
+
+    <footer>
+        <span>
+            &copy;
+            <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time>
+            <abbr title="Desarrollo de Aplicaciones Web">DAW</abbr>
+            <span>
+                <p>Autores:</p>
+                <p>Iker García Azorín</p>
+                <p>Pablo Guill Montero</p>
+            </span>
+        </span>  
+    </footer>
+</body>
+</html>
