@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar_album-GameScape</title>
+</head>
+<body>
+    <header>
+        <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
+        <a href="index_identificado.html"><h1>GameScape</h1></a>
+        <nav>
+            <ul id="menu">
+                <li><a href="index_identificado.html">INICIO</a></li>
+                <li><a href="buscar.html">BUSCAR</a></li>
+                <li><a href="nueva_imagen.html">NUEVA IMAGEN</a></li>
+                <li><a href="nuevo_album.html">NUEVO ÁLBUM</a></li>
+                <li><a href="usuario.html">USUARIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Solicitar impresión del album</h1>
+        <p>Mediante esta opción puedes solicitar la impresión y envio de unodetus albunes a todo color, toda resolución.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia nam modi voluptatibus odio distinctio nulla ex aliquam sit provident, cumque autem quod veniam amet dolor adipisci deserunt</p>
+        <section>
+            <h2>Tarifas</h2>
+            <table>
+                <th>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Tarifa</th>
+                    </tr>
+                </th>
+                <tr>
+                    <th>< 5 paginas</th>
+                    <th>0.10€ por pág.</th>
+                </tr>
+                <tr>
+                    <th>entr 5 y 10 pág</th>
+                    <th>0.08€ por pag</th>
+                </tr>
+                <tr>
+                    <th>> 11 páginas</th>
+                    <th>0.07€ por pág</th>
+                </tr>
+                <tr>
+                    <th>Blanco y negro</th>
+                    <th>0€</th>
+                </tr>
+                <tr>
+                    <th>Color</th>
+                    <th>0.05€ por foto</th>
+                </tr>
+                <tr>
+                    <th>Resolución > 300dpi</th>
+                    <th>0.02 por foto</th>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Formulario de solicitud</h2>
+            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album</p>
+            <form action="solicitar_album_respuesta.html">
+                <p><label for="nombre">NOMBRE</label><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"> (*)</p>
+                <p><label for="album">Titulo del álbum</label><input type="text" name="album" id="album" required placeholder="que lo describa" maxlength="200"> (*)</p>
+                <p><label for="adicional">Texto adicional</label><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></p>
+                <p><label for="email">EMAIL</label><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"> (*)</p>
+                <p>
+                    Dirección 
+                   <input type="text" name="calle" id="calle" required placeholder="Calle"> 
+                   <input type="text" name="numero" id="numero" required placeholder="Número">
+                   <input type="text" name="localidad" id="localidad" required placeholder="Localidad" list="ciudades">
+                   <datalist id="ciudades">
+                        <option value="Alicante">
+                        <option value="Barcelona">
+                        <option value="Madrid">
+                   </datalist>
+                   <input type="text" name="provincia" id="provincia" required placeholder="Provincia" list="provincias">
+                   <datalist id="provincias">
+                        <option value="Alicante">
+                        <option value="Castellon">
+                        <option value="Valencia">
+                   </datalist>
+                    
+                (*)</p>
+
+                <p><label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></p>
+                <p><label for="color"> Color de la portada</label><input type="color" id="color" name="color" value="#1AJ33FF"/></p>
+                <p><label for="cantidad">Número de copias</label><input type="number" id="cantidad" name="cantidad" value="1" min="1"></p>
+                <p><label for="resolucion">Resolución de la impresión</label><input type="number" id="resolucion" name="resolucion" value="150" min="150" max="900" step="5"></p>
+                <p><label for="album">Álbum de PI</label><select name="album" id="album" required>
+                    <option value="a1">Àlbum1</option>
+                    <option value="a2">Àlbum2</option>
+                    <option value="a3">Àlbum3</option>
+                </select></p>
+                <p><label for="fecha">Fecha aproximada de recepción</label><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</p>
+                <p><label for="col_impre">Impresión a color</label><input type="checkbox" name="col_impre" id="col_impre"></p>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        
+    </main>
+
+    <footer>
+        &copy;
+        <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time>
+        <abbr title="Desarrollo de Aplicaciones Web">DAW</abbr>
+        <p>Autores:</p>
+        <p>Iker García Azorín</p>
+        <p>Pablo Guill Montero</p>
+    </footer>
+</body>
+</html>
