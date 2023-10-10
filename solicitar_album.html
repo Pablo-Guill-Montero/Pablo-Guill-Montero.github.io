@@ -27,35 +27,33 @@
         <section>
             <h2>Tarifas</h2>
             <table>
-                <th>
-                    <tr>
-                        <th>Concepto</th>
-                        <th>Tarifa</th>
-                    </tr>
-                </th>
                 <tr>
-                    <th>< 5 paginas</th>
-                    <th>0.10€ por pág.</th>
+                    <th>Concepto</th>
+                    <th>Tarifa</th>
                 </tr>
                 <tr>
-                    <th>entr 5 y 10 pág</th>
-                    <th>0.08€ por pag</th>
+                    <td>&lt; 5 paginas</td>
+                    <td>0.10€ por pág.</td>
                 </tr>
                 <tr>
-                    <th>> 11 páginas</th>
-                    <th>0.07€ por pág</th>
+                    <td>entr 5 y 10 pág</td>
+                    <td>0.08€ por pag</td>
                 </tr>
                 <tr>
-                    <th>Blanco y negro</th>
-                    <th>0€</th>
+                    <td>> 11 páginas</td>
+                    <td>0.07€ por pág</td>
                 </tr>
                 <tr>
-                    <th>Color</th>
-                    <th>0.05€ por foto</th>
+                    <td>Blanco y negro</td>
+                    <td>0€</td>
                 </tr>
                 <tr>
-                    <th>Resolución > 300dpi</th>
-                    <th>0.02 por foto</th>
+                    <td>Color</td>
+                    <td>0.05€ por foto</td>
+                </tr>
+                <tr>
+                    <td>Resolución > 300dpi</td>
+                    <td>0.02 por foto</td>
                 </tr>
             </table>
         </section>
@@ -65,7 +63,7 @@
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album</p>
             <form action="solicitar_album_respuesta.html">
                 <p><label for="nombre">NOMBRE</label><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"> (*)</p>
-                <p><label for="album">Titulo del álbum</label><input type="text" name="album" id="album" required placeholder="que lo describa" maxlength="200"> (*)</p>
+                <p><label for="titulo">Titulo del álbum</label><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"> (*)</p>
                 <p><label for="adicional">Texto adicional</label><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></p>
                 <p><label for="email">EMAIL</label><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"> (*)</p>
                 <p>
@@ -88,13 +86,13 @@
                 (*)</p>
 
                 <p><label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></p>
-                <p><label for="color"> Color de la portada</label><input type="color" id="color" name="color" value="#1AJ33FF"/></p>
-                <p><label for="cantidad">Número de copias</label><input type="number" id="cantidad" name="cantidad" value="1" min="1"></p>
-                <p><label for="resolucion">Resolución de la impresión</label><input type="number" id="resolucion" name="resolucion" value="150" min="150" max="900" step="5"></p>
-                <p><label for="album">Álbum de PI</label><select name="album" id="album" required>
-                    <option value="a1">Àlbum1</option>
-                    <option value="a2">Àlbum2</option>
-                    <option value="a3">Àlbum3</option>
+                <p><label for="color"> Color de la portada</label><input type="color" id="color" name="color" value="#000000"/></p>
+                <p><label for="cantidad">Número de copias</label><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="99"></p>
+                <p><label for="resolucion">Resolución de la impresión</label><input type="number" id="resolucion" name="resolucion" value="150" min="150" max="900" step="150"></p>
+                <p><label for="album">Álbum de PI</label><select name="album" id="album">
+                    <option value="1">Àlbum1</option>
+                    <option value="2">Àlbum2</option>
+                    <option value="3">Àlbum3</option>
                 </select></p>
                 <p><label for="fecha">Fecha aproximada de recepción</label><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</p>
                 <p><label for="col_impre">Impresión a color</label><input type="checkbox" name="col_impre" id="col_impre"></p>
