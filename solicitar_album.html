@@ -21,8 +21,8 @@
     </header>
 
     <main>
-        <h1>Solicitar impresión del album</h1>
-        <p>Mediante esta opción puedes solicitar la impresión y envio de unodetus albunes a todo color, toda resolución.</p>
+        <h1>Solicitar impresión del álbum</h1>
+        <p>Mediante esta opción puedes solicitar la impresión y envio de uno de tus álbumes a todo color, toda resolución.</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia nam modi voluptatibus odio distinctio nulla ex aliquam sit provident, cumque autem quod veniam amet dolor adipisci deserunt</p>
         <section>
             <h2>Tarifas</h2>
@@ -32,12 +32,12 @@
                     <th>Tarifa</th>
                 </tr>
                 <tr>
-                    <td>&lt; 5 paginas</td>
+                    <td>&lt; 5 páginas</td>
                     <td>0.10€ por pág.</td>
                 </tr>
                 <tr>
-                    <td>entr 5 y 10 pág</td>
-                    <td>0.08€ por pag</td>
+                    <td>entre 5 y 10 pág</td>
+                    <td>0.08€ por pág</td>
                 </tr>
                 <tr>
                     <td>> 11 páginas</td>
@@ -60,10 +60,10 @@
 
         <section>
             <h2>Formulario de solicitud</h2>
-            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album</p>
+            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
             <form action="solicitar_album_respuesta.html">
                 <p><label for="nombre">NOMBRE</label><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"> (*)</p>
-                <p><label for="titulo">Titulo del álbum</label><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"> (*)</p>
+                <p><label for="titulo">Título del álbum</label><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"> (*)</p>
                 <p><label for="adicional">Texto adicional</label><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></p>
                 <p><label for="email">EMAIL</label><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"> (*)</p>
                 <p>
@@ -82,18 +82,21 @@
                         <option value="Castellon">
                         <option value="Valencia">
                    </datalist>
-                    
-                (*)</p>
+                    (*)
+                </p>
 
                 <p><label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></p>
                 <p><label for="color"> Color de la portada</label><input type="color" id="color" name="color" value="#000000"/></p>
                 <p><label for="cantidad">Número de copias</label><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="99"></p>
                 <p><label for="resolucion">Resolución de la impresión</label><input type="number" id="resolucion" name="resolucion" value="150" min="150" max="900" step="150"></p>
-                <p><label for="album">Álbum de PI</label><select name="album" id="album">
-                    <option value="1">Àlbum1</option>
-                    <option value="2">Àlbum2</option>
-                    <option value="3">Àlbum3</option>
-                </select></p>
+                <p>
+                    <label for="album">Álbum de PI</label>
+                    <select name="album" id="album">
+                        <option value="1">Álbum1</option>
+                        <option value="2">Álbum2</option>
+                        <option value="3">Álbum3</option>
+                    </select>
+                </p>
                 <p><label for="fecha">Fecha aproximada de recepción</label><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</p>
                 <p><label for="col_impre">Impresión a color</label><input type="checkbox" name="col_impre" id="col_impre"></p>
                 <input type="submit" value="Enviar">
