@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviso-GameScape</title>
+    <title>Login-GameScape</title>
 </head>
 <body>
     <header>
@@ -13,16 +13,31 @@
             <ul id="menu">
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="buscar.html">BUSCAR</a></li>
+                <li><a href="login.html">LOGIN</a></li>
                 <li><a href="registro.html">REGISTRO</a></li>
             </ul>
-        </nav>    
+        </nav>
     </header>
-    
+
     <main>
-        <h1>Aviso</h1>
-        <p>¡Aviso! Debes estar identificado para poder acceder al detalle de una foto</p>
-        <a href="index.html">Iniciar Sesión</a>
-        <a href="registro.html">Registrarse</a>
+        <h1>Login</h1>
+        <form action="index_identificado.html">
+            <P>
+                <label for="nombre">
+                    <span>NOMBRE</span>
+                    <span><input type="text" name="nombre" id="nombre" required></span>
+                </label>
+            </p>
+            <P>
+                <label for="pwd">
+                    <span>CONTRASEÑA</span>
+                    <span><input type="password" name="pwd" id="pwd" required></span>
+                </label>
+            </p>
+            <p>
+                <input type="submit" value="Login">
+            </p>
+        </form>
     </main>
 
     <footer>

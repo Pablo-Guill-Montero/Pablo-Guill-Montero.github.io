@@ -8,7 +8,7 @@
 <body>
     <header>
         <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
-        <a href="index_identificado.html"><h1>GameScape</h1></a>
+        <a href="index_identificado.html"><span>GameScape</span></a>
         <nav>
             <ul id="menu">
                 <li><a href="index_identificado.html">INICIO</a></li>
@@ -33,26 +33,26 @@
                 </tr>
                 <tr>
                     <td>&lt; 5 páginas</td>
-                    <td>0.10€ por pág.</td>
+                    <td>0.10&euro; por pág.</td>
                 </tr>
                 <tr>
                     <td>entre 5 y 10 pág</td>
-                    <td>0.08€ por pág</td>
+                    <td>0.08&euro; por pág</td>
                 </tr>
                 <tr>
                     <td>> 11 páginas</td>
-                    <td>0.07€ por pág</td>
+                    <td>0.07&euro; por pág</td>
                 </tr>
                 <tr>
                     <td>Blanco y negro</td>
-                    <td>0€</td>
+                    <td>0&euro;</td>
                 </tr>
                 <tr>
                     <td>Color</td>
-                    <td>0.05€ por foto</td>
+                    <td>0.05&euro; por foto</td>
                 </tr>
                 <tr>
-                    <td>Resolución > 300dpi</td>
+                    <td>Resolución &lt; 300dpi</td>
                     <td>0.02 por foto</td>
                 </tr>
             </table>
@@ -62,43 +62,99 @@
             <h2>Formulario de solicitud</h2>
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
             <form action="solicitar_album_respuesta.html">
-                <p><label for="nombre">NOMBRE</label><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"> (*)</p>
-                <p><label for="titulo">Título del álbum</label><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"> (*)</p>
-                <p><label for="adicional">Texto adicional</label><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></p>
-                <p><label for="email">EMAIL</label><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"> (*)</p>
                 <p>
-                    Dirección 
-                   <input type="text" name="calle" id="calle" required placeholder="Calle"> 
-                   <input type="text" name="numero" id="numero" required placeholder="Número">
-                   <input type="text" name="localidad" id="localidad" required placeholder="Localidad" list="ciudades">
-                   <datalist id="ciudades">
-                        <option value="Alicante">
-                        <option value="Barcelona">
-                        <option value="Madrid">
-                   </datalist>
-                   <input type="text" name="provincia" id="provincia" required placeholder="Provincia" list="provincias">
-                   <datalist id="provincias">
-                        <option value="Alicante">
-                        <option value="Castellon">
-                        <option value="Valencia">
-                   </datalist>
-                    (*)
+                    <label for="nombre">
+                        <span>NOMBRE</span>
+                        <span><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"></span>
+                        <span>(*)</span>
+                    </label>
                 </p>
-
-                <p><label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></p>
-                <p><label for="color"> Color de la portada</label><input type="color" id="color" name="color" value="#000000"/></p>
-                <p><label for="cantidad">Número de copias</label><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="99"></p>
-                <p><label for="resolucion">Resolución de la impresión</label><input type="number" id="resolucion" name="resolucion" value="150" min="150" max="900" step="150"></p>
                 <p>
-                    <label for="album">Álbum de PI</label>
-                    <select name="album" id="album">
-                        <option value="1">Álbum1</option>
-                        <option value="2">Álbum2</option>
-                        <option value="3">Álbum3</option>
-                    </select>
+                    <label for="titulo">
+                        <span>Título del álbum</span>
+                        <span><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"></span>
+                        <span>(*)</span>
+                    </label>
                 </p>
-                <p><label for="fecha">Fecha aproximada de recepción</label><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</p>
-                <p><label for="col_impre">Impresión a color</label><input type="checkbox" name="col_impre" id="col_impre"></p>
+                <p>
+                    <label for="adicional">
+                        <span>Texto adicional</span>
+                        <span><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="email">
+                        <span>EMAIL</span>
+                        <span><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"></span>
+                        <span>(*)</span>
+                    </label>
+                </p>
+                <fieldset>
+                    <legend>Dirección</legend>
+                    <input type="text" name="calle" id="calle" required placeholder="Calle"> 
+                    <input type="text" name="numero" id="numero" required placeholder="Número">
+                    <input type="text" name="localidad" id="localidad" required placeholder="Localidad" list="ciudades">
+                    <datalist id="ciudades">
+                            <option value="Alicante">
+                            <option value="Barcelona">
+                            <option value="Madrid">
+                    </datalist>
+                    <input type="text" name="provincia" id="provincia" required placeholder="Provincia" list="provincias">
+                    <datalist id="provincias">
+                            <option value="Alicante">
+                            <option value="Castellon">
+                            <option value="Valencia">
+                    </datalist>
+                        (*)
+                </fieldset>
+                <p>
+                    <label for="telefono">
+                        <span>Teléfono</span>
+                        <span><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="color">
+                        <span>Color de la portada</span>
+                        <span><input type="color" id="color" name="color" value="#000000"/></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="cantidad">
+                        <span>Número de copias</span>
+                        <span><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="99"></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="resolucion">
+                        <span>Resolución de la impresión</span>
+                        <span><input type="range" id="resolucion" name="resolucion" value="150" min="150" max="900" step="150"></span>
+                    </label>
+                </p>
+                <p> 
+                    <label for="album">
+                        <span>Álbum de PI</span>
+                        <span>
+                            <select name="album" id="album">
+                                <option value="1">Álbum1</option>
+                                <option value="2">Álbum2</option>
+                                <option value="3">Álbum3</option>
+                            </select>
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label for="fecha">
+                        <span>Fecha aproximada de recepción</span>
+                        <span><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</span>
+                    </label>
+                </p>
+                <p>
+                    <label for="col_impre">
+                        <span>Impresión a color</span>
+                        <span><input type="checkbox" name="col_impre" id="col_impre"></span>
+                    </label>
+                </p>
                 <input type="submit" value="Enviar">
             </form>
         </section>
