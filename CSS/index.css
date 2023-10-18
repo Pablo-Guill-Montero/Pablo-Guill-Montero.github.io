@@ -1,0 +1,237 @@
+/* 
+COLORES LOGO
+#6873a9 Azul claro
+#18185b Azul oscuro
+#d0e0fa Casi blanco
+
+MÁS COLORES
+#F5F7FC Casi blanco
+#7F94C9 Azul claro
+#415996
+#172D63
+#021033 Azul oscuro 
+
+background-color: #247EB3;
+background-color: #292F33;
+background-color: #2E414C;
+background-color: #336380;
+background-color: #0093E6; claro
+*/
+
+body{
+    background-color: #7F94C9;
+    margin: 0;
+    padding: 0;
+    min-width: 348px;
+    font-family: 'Shantell Sans', cursive;
+}
+
+header{
+    margin: .5em;
+    display: flex;
+    /* justify-content:space-evenly; */
+    align-items: center;
+
+    position:sticky; /*posicion absoluta pegada arriba*/
+    z-index: 1;
+    top: 0;
+}
+    header > span {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 2em;
+        text-align: center;
+    }
+        header > span > a{
+            display: flex;
+            text-align: center;
+        }
+
+
+/* MENÚ */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1em;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    background-color: #415996bf;
+    border-radius: 15px;
+} 
+
+    nav > ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: .5em;
+        margin: 0;
+    }
+        nav > ul > li{
+            margin: 0 .5em;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+            nav > ul > li >a{
+                padding: .4em;
+                display: block;
+                border-radius: 15px;
+                text-align: center;
+                width: 100%;
+            }
+                nav > ul > li > a:hover{
+                    background-color: #0092e6ac;
+                }
+
+label{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+main{
+    color: #d0e0fa;
+    border-radius: 20px;
+    background-color: #172D63;
+    margin: 1em;
+}
+
+footer{
+    color: #d0e0fa;
+    background-color: #021033;
+    padding: .5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+    footer > p {
+        padding: 0 .5em;
+    }
+
+h1{
+    padding: .5em;
+}
+
+/*para ocultar el texto y solo dejar los iconos*/
+/* header > nav > ul > li > a > span{ 
+    display:none;
+} */
+
+/*oculta las barras de opciones pero no los iconos*/ 
+header > nav > label[for]{
+    display:none; 
+}
+
+/* -------------- CLASES --------------------------------------------------------------------------------------------- */
+/* ARTÍCULOS */
+.articulos{
+    padding: 0 1em;
+}
+    .articulos > div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+        .articulos > div > article {
+            border-radius: 20px;
+            margin: .5em;
+            width: 30%;
+            background-color: #021033;
+        }
+            .articulos > div > article > span {
+                padding: 0 .5em;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+            }
+            .articulos > div > article > a {
+                display: flex;
+            }
+                .articulos > div > article > a > img{
+                    border-radius: 20px 20px 0 0;
+                    width: 100%;
+                }
+/* ---------------------------------------------------------------------------------------------------------------------  */
+
+/* -------------- IDENTIFICADORES --------------------------------------------------------------------------------------------- */
+#chkmenu {
+    display: none;
+}
+
+#login{
+    background-color: #0093E6;
+}
+
+#registro{
+    background-color: #d0e0fa;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------  */
+
+/* -------------- MEDIAQUERIES --------------------------------------------------------------------------------------------- */
+/*Móvil*/
+@media screen and (max-width: 767px) {
+    header {
+        justify-content: space-between;
+    }
+        header > nav{
+            padding: 0 .5em;
+            width: 30%;
+        }
+            header > nav > ul{
+                display: none;
+            }
+
+    header > nav > label[for]{
+        display:block; 
+        font-size: 2.5em;
+    }
+
+    
+    /* MENU */
+    #chkmenu:checked + ul {
+        display: block;
+        max-height: 10em;
+    }
+    
+    header > span > a > img{
+        width: 45px;
+    }
+
+    nav > ul > li >a > span{
+        display: none;
+    }
+    
+    /* ARTÍCULOS */
+    .articulos > div > article {
+        width: 90%;
+    }
+    body{
+        font-size: .7em;
+    }
+
+}
+
+/*Tableta*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    
+    /* ARTÍCULOS */
+    .articulos > div > article {
+        width: 40%;
+    }
+}
+/* ---------------------------------------------------------------------------------------------------------------------  */
+
