@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario-GameScape</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/css/fontello.css">
 </head>
 <body>
     <header>
-        <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
-        <a href="index_identificado.html"><span>GameScape</span></a>
+        <span>
+            <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
+            <a href="index.html"><span>GameScape</span></a>
+        </span>  
         <nav>
+            <label for="chkmenu">  <!--Para ocultar y sacar el menúdesplegable-->
+                &equiv;
+            </label>
+            <input type="checkbox" id="chkmenu" name="chkmenu">
             <ul id="menu">
-                <li><a href="index_identificado.html">INICIO</a></li>
-                <li><a href="buscar.html">BUSCAR</a></li>
-                <li><a href="nueva_imagen.html">NUEVA IMAGEN</a></li>
-                <li><a href="nuevo_album.html">NUEVO ÁLBUM</a></li>
-                <li><a href="usuario.html">USUARIO</a></li>
+                <li><a class="icon-inicio" href="index.html"><span>INICIO</span></a></li>
+                <li><a class="icon-buscar" href="buscar.html"><span>BUSCAR</span></a></li>
+                <li><a class="icon-nuevaImagen" href="nueva_imagen.html">NUEVA IMAGEN</a></li>
+                <li><a class="icon-nuevoAlbum" href="nuevo_album.html">NUEVO ÁLBUM</a></li>
+                <li><a class="icon-editarPerfil" href="usuario.html">USUARIO</a></li>
             </ul>
         </nav>
     </header>
@@ -23,22 +31,19 @@
     <main>
         <h1>Usuario</h1>
         <ul>
-            <li><a href="editar_perfil.html">Editar perfil</a></li>
-            <li><a href="baja.html">Darse de baja</a></li>
-            <li><a href="mis_albumes.html">Mis álbumes</a></li>
-            <li><a href="nuevo_album.html">Nuevo álbum</a></li>
-            <li><a href="solicitar_album.html">Solicitar álbum impreso</a></li>
-            <li><a href="index.html">Salir</a></li>
+            <li><a class="icon-editarPerfil" href="editar_perfil.html">Editar perfil</a></li>
+            <li><a class="icon-baja" href="baja.html">Darse de baja</a></li>
+            <li><a class="icon-album" href="mis_albumes.html">Mis álbumes</a></li>
+            <li><a class="icon-nuevoAlbum" href="nuevo_album.html">Nuevo álbum</a></li>
+            <li><a class="icon-impreso" href="solicitar_album.html">Solicitar álbum impreso</a></li>
+            <li><a class="icon-login" href="index.html">Salir</a></li>
         </ul>
     </main>
 
     <footer>
-        &copy;
-        <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time>
-        <abbr title="Desarrollo de Aplicaciones Web">DAW</abbr>
-        <p>Autores:</p>
-        <p>Iker García Azorín</p>
-        <p>Pablo Guill Montero</p>
+        <p>&copy; <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time></p>
+        <p><abbr title="Desarrollo de Aplicaciones Web">DAW</abbr></p>
+        <p>Autores: Iker García Azorín y Pablo Guill Montero</p>
     </footer>
 </body>
 </html>

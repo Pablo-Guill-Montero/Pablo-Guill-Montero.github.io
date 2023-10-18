@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitar_album-GameScape</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/css/fontello.css">
 </head>
 <body>
     <header>
-        <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
-        <a href="index_identificado.html"><span>GameScape</span></a>
+        <span>
+            <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
+            <a href="index.html"><span>GameScape</span></a>
+        </span>  
         <nav>
+            <label for="chkmenu">  <!--Para ocultar y sacar el menúdesplegable-->
+                &equiv;
+            </label>
+            <input type="checkbox" id="chkmenu" name="chkmenu">
             <ul id="menu">
-                <li><a href="index_identificado.html">INICIO</a></li>
-                <li><a href="buscar.html">BUSCAR</a></li>
-                <li><a href="nueva_imagen.html">NUEVA IMAGEN</a></li>
-                <li><a href="nuevo_album.html">NUEVO ÁLBUM</a></li>
-                <li><a href="usuario.html">USUARIO</a></li>
+                <li><a class="icon-inicio" href="index.html"><span>INICIO</span></a></li>
+                <li><a class="icon-buscar" href="buscar.html"><span>BUSCAR</span></a></li>
+                <li><a class="icon-nuevaImagen" href="nueva_imagen.html">NUEVA IMAGEN</a></li>
+                <li><a class="icon-nuevoAlbum" href="nuevo_album.html">NUEVO ÁLBUM</a></li>
+                <li><a class="icon-editarPerfil" href="usuario.html">USUARIO</a></li>
             </ul>
         </nav>
     </header>
@@ -62,112 +70,112 @@
             <h2>Formulario de solicitud</h2>
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
             <form action="solicitar_album_respuesta.html">
-                <p>
-                    <label for="nombre">
-                        <span>NOMBRE</span>
-                        <span><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"></span>
-                        <span>(*)</span>
-                    </label>
-                </p>
-                <p>
-                    <label for="titulo">
-                        <span>Título del álbum</span>
-                        <span><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"></span>
-                        <span>(*)</span>
-                    </label>
-                </p>
-                <p>
-                    <label for="adicional">
-                        <span>Texto adicional</span>
-                        <span><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></span>
-                    </label>
-                </p>
-                <p>
-                    <label for="email">
-                        <span>EMAIL</span>
-                        <span><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"></span>
-                        <span>(*)</span>
-                    </label>
-                </p>
-                <fieldset>
-                    <legend>Dirección</legend>
-                    <input type="text" name="calle" id="calle" required placeholder="Calle"> 
-                    <input type="text" name="numero" id="numero" required placeholder="Número">
-                    <input type="text" name="localidad" id="localidad" required placeholder="Localidad" list="ciudades">
-                    <datalist id="ciudades">
-                            <option value="Alicante">
-                            <option value="Barcelona">
-                            <option value="Madrid">
-                    </datalist>
-                    <input type="text" name="provincia" id="provincia" required placeholder="Provincia" list="provincias">
-                    <datalist id="provincias">
-                            <option value="Alicante">
-                            <option value="Castellon">
-                            <option value="Valencia">
-                    </datalist>
-                        (*)
-                </fieldset>
-                <p>
-                    <label for="telefono">
-                        <span>Teléfono</span>
-                        <span><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></span>
-                    </label>
-                </p>
-                <p>
-                    <label for="color">
-                        <span>Color de la portada</span>
-                        <span><input type="color" id="color" name="color" value="#000000"/></span>
-                    </label>
-                </p>
-                <p>
-                    <label for="cantidad">
-                        <span>Número de copias</span>
-                        <span><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="99"></span>
-                    </label>
-                </p>
-                <p>
-                    <label for="resolucion">
-                        <span>Resolución de la impresión</span>
-                        <span><input type="range" id="resolucion" name="resolucion" value="150" min="150" max="900" step="150"></span>
-                    </label>
-                </p>
-                <p> 
-                    <label for="album">
-                        <span>Álbum de PI</span>
-                        <span>
-                            <select name="album" id="album">
-                                <option value="1">Álbum1</option>
-                                <option value="2">Álbum2</option>
-                                <option value="3">Álbum3</option>
-                            </select>
-                        </span>
-                    </label>
-                </p>
-                <p>
-                    <label for="fecha">
-                        <span>Fecha aproximada de recepción</span>
-                        <span><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</span>
-                    </label>
-                </p>
-                <p>
-                    <label for="col_impre">
-                        <span>Impresión a color</span>
-                        <span><input type="checkbox" name="col_impre" id="col_impre"></span>
-                    </label>
-                </p>
-                <input type="submit" value="Enviar">
+                <div>
+                    <p>
+                        <label for="nombre">
+                            <span>NOMBRE</span>
+                            <span><input type="text" name="nombre" id="nombre" required placeholder="su nombre" maxlength="200"></span>
+                            <span>(*)</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="titulo">
+                            <span>Título del álbum</span>
+                            <span><input type="text" name="titulo" id="titulo" required placeholder="que lo describa" maxlength="200"></span>
+                            <span>(*)</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="adicional">
+                            <span>Texto adicional</span>
+                            <span><textarea name="adicional" id="adicional" cols="50" rows="4" maxlength="4000" placeholder="dedicatoria, descripción de su contenido, etc."></textarea></span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="email">
+                            <span>EMAIL</span>
+                            <span><input type="email" name="email" id="email" required placeholder="su email" maxlength="200"></span>
+                            <span>(*)</span>
+                        </label>
+                    </p>
+                    <fieldset>
+                        <legend>Dirección</legend>
+                        <input type="text" name="calle" id="calle" required placeholder="Calle"> 
+                        <input type="text" name="numero" id="numero" required placeholder="Número">
+                        <input type="text" name="localidad" id="localidad" required placeholder="Localidad" list="ciudades">
+                        <datalist id="ciudades">
+                                <option value="Alicante">
+                                <option value="Barcelona">
+                                <option value="Madrid">
+                        </datalist>
+                        <input type="text" name="provincia" id="provincia" required placeholder="Provincia" list="provincias">
+                        <datalist id="provincias">
+                                <option value="Alicante">
+                                <option value="Castellon">
+                                <option value="Valencia">
+                        </datalist>
+                            (*)
+                    </fieldset>
+                    <p>
+                        <label for="telefono">
+                            <span>Teléfono</span>
+                            <span><input type="tel" name="telefono" id="telefono" placeholder="### ## ## ##"></span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="color">
+                            <span>Color de la portada</span>
+                            <span><input type="color" id="color" name="color" value="#000000"/></span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="cantidad">
+                            <span>Número de copias</span>
+                            <span><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="99"></span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="resolucion">
+                            <span>Resolución de la impresión</span>
+                            <span><input type="range" id="resolucion" name="resolucion" value="150" min="150" max="900" step="150"></span>
+                        </label>
+                    </p>
+                    <p> 
+                        <label for="album">
+                            <span>Álbum de PI</span>
+                            <span>
+                                <select name="album" id="album">
+                                    <option value="1">Álbum1</option>
+                                    <option value="2">Álbum2</option>
+                                    <option value="3">Álbum3</option>
+                                </select>
+                            </span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="fecha">
+                            <span>Fecha aproximada de recepción</span>
+                            <span><input type="date" id="fecha" name="fecha" min="2023-10-10">Fecha aproximada de llegada</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="col_impre">
+                            <span>Impresión a color</span>
+                            <span><input type="checkbox" name="col_impre" id="col_impre"></span>
+                        </label>
+                    </p>
+                    <input type="submit" value="Enviar">
+                </div>
             </form>
+                
         </section>
         
     </main>
 
     <footer>
-        &copy;
-        <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time>
-        <abbr title="Desarrollo de Aplicaciones Web">DAW</abbr>
-        <p>Autores:</p>
-        <p>Iker García Azorín</p>
-        <p>Pablo Guill Montero</p>
+        <p>&copy; <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time></p>
+        <p><abbr title="Desarrollo de Aplicaciones Web">DAW</abbr></p>
+        <p>Autores: Iker García Azorín y Pablo Guill Montero</p>
     </footer>
 </body>
 </html>

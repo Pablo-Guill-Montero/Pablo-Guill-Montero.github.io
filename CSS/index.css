@@ -48,6 +48,11 @@ header{
             text-align: center;
         }
 
+        /*oculta las barras de opciones pero no los iconos*/ 
+        header > nav > label[for]{
+            display:none; 
+        }
+
 
 /* MENÚ */
 nav{
@@ -101,11 +106,16 @@ ul{
 }
 
 main{
+    padding: .5em;
     color: #d0e0fa;
     border-radius: 20px;
     background-color: #172D63;
     margin: 1em;
 }
+    /* lista del usuario MAKA */
+    main > ul > li{
+        margin: .5em;
+    }
 
 footer{
     color: #d0e0fa;
@@ -124,15 +134,43 @@ h1{
     padding: .5em;
 }
 
-/*para ocultar el texto y solo dejar los iconos*/
-/* header > nav > ul > li > a > span{ 
-    display:none;
-} */
-
-/*oculta las barras de opciones pero no los iconos*/ 
-header > nav > label[for]{
-    display:none; 
+table, th, td {
+    border: 1px solid black;
 }
+table{
+    border-collapse: collapse;
+    margin: .5em;
+}
+th{
+    background-color: #0093E6;
+    padding: .5em;
+}
+td{
+    background-color: #021033;
+    padding: .5em;
+}
+
+form{
+    justify-content: center;
+    display: flex;
+    padding: 2em;
+}
+    form  > div{
+        width: 41%; 
+        background-color: #021033;
+        padding: .5em;
+        border-radius: 20px;
+    }
+        form > div > p > label{
+            display: flex;
+            justify-content: space-between;
+        }
+
+textarea{
+    width: 90%;
+}
+
+
 
 /* -------------- CLASES --------------------------------------------------------------------------------------------- */
 /* ARTÍCULOS */
@@ -150,7 +188,10 @@ header > nav > label[for]{
             width: 30%;
             background-color: #021033;
         }
-            .articulos > div > article > span {
+            .articulos > div > article > h3 {
+                padding: 0 .5em;
+            }
+            .articulos > div > article > p {
                 padding: 0 .5em;
                 display: flex;
                 justify-content: space-between;
@@ -164,9 +205,70 @@ header > nav > label[for]{
                     border-radius: 20px 20px 0 0;
                     width: 100%;
                 }
+
+.detalle{
+    border-radius: 20px;
+    background-color: #021033;
+}
+
+.detalle > img{
+  width: 100%;
+}
+
+.detalle > h2{
+    padding: .5em .5em 0 .5em;
+}
+.detalle > p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.aviso{
+    padding: 0 .5em  1em .5em;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #021033;
+}
+    .aviso > a{
+        margin: .4em;
+        padding: .4em;
+        border-radius: 15px;
+        text-align: center;
+        width: 40%;
+    }
+        .aviso > a:hover{
+            background-color: #0092e6ac;
+        }
 /* ---------------------------------------------------------------------------------------------------------------------  */
 
 /* -------------- IDENTIFICADORES --------------------------------------------------------------------------------------------- */
+/* #seccion_resultado{
+    justify-content: center;
+    display: flex;
+    padding: 2em;
+}
+    #seccion_resultado > div{
+        width: 41%; 
+        background-color: #021033;
+        padding: .5em;
+        border-radius: 20px;
+    }
+    #seccion_resultado > h2{
+        margin-bottom: .5em;
+    } */
+
+    #seccion_resultado > div{
+        margin-inline: 30%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #021033;
+    }
 #chkmenu {
     display: none;
 }
@@ -200,12 +302,12 @@ header > nav > label[for]{
         font-size: 2.5em;
     }
 
-    
-    /* MENU */
-    #chkmenu:checked + ul {
-        display: block;
-        max-height: 10em;
+    form{
+        margin: 0;
     }
+        form  > div{
+            width: 95%; 
+        }
     
     header > span > a > img{
         width: 45px;
@@ -215,23 +317,46 @@ header > nav > label[for]{
         display: none;
     }
     
+    body{
+        font-size: .7em;
+    }
+
     /* ARTÍCULOS */
     .articulos > div > article {
         width: 90%;
     }
-    body{
-        font-size: .7em;
+
+    /* MENU */
+    #chkmenu:checked + ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /* width: 100%; */
+        display: flex;
+        /* justify-content: space-evenly; */
+        padding: 0;
+        margin: 0
+    }
+    #seccion_resultado > div{
+        margin-inline: 10%;
     }
 
 }
 
 /*Tableta*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    
+    body{
+        font-size: .7em;
+    }
+
+    form  > div{
+        width: 70%; 
+    }
+
     /* ARTÍCULOS */
     .articulos > div > article {
         width: 40%;
     }
+
 }
 /* ---------------------------------------------------------------------------------------------------------------------  */
-

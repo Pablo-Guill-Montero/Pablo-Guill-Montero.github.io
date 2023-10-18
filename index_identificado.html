@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio_Identificado-GameScape</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/css/fontello.css">
 </head>
 <body>
     <header>
-        <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
-        <a href="index_identificado.html"><span>GameScape</span></a>
+        <span>
+            <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
+            <a href="index_identificado.html"><span>GameScape</span></a>
+        </span>
         <nav>
+            <label for="chkmenu">  <!--Para ocultar y sacar el menúdesplegable-->
+                &equiv;
+            </label>
+            <input type="checkbox" id="chkmenu" name="chkmenu">
             <ul id="menu">
-                <li><a href="index_identificado.html">INICIO</a></li>
-                <li><a href="buscar.html">BUSCAR</a></li>
-                <li><a href="nueva_imagen.html">NUEVA IMAGEN</a></li>
-                <li><a href="nuevo_album.html">NUEVO ÁLBUM</a></li>
-                <li><a href="usuario.html">USUARIO</a></li>
+                <li><a class="icon-inicio" href="index_identificado.html"><span>INICIO</span></a></li>
+                <li><a class="icon-buscar" href="buscar.html"><span>BUSCAR</span></a></li>
+                <li><a class="icon-nuevaImagen" href="nueva_imagen.html"><span>NUEVA IMAGEN</span></a></li>
+                <li><a class="icon-nuevoAlbum" href="nuevo_album.html"><span>NUEVO ÁLBUM</span></a></li>
+                <li><a class="icon-editarPerfil" href="usuario.html"><span>USUARIO</span></a></li>
             </ul>
         </nav>
     </header>
@@ -23,52 +31,57 @@
     <main>
         <h1>Inicio</h1>
         
-        <section>
+        <section class="articulos">
             <h2>Fotos recientes</h2>
-            <article>
-                <a href="detalle.html"><h3>Título 1</h3></a>
-                <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
-                <time datetime="2023-09-25T18:00:00">Fecha 1</time>
-                <p>Videojuego X</p>
-            </article>
-
-            <article>
-                <a href="detalle.html"><h3>Título 2</h3></a>
-                <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
-                <time datetime="2023-09-25T18:00:00">Fecha 2</time>
-                <p>Videojuego X</p>
-            </article>
-
-            <article>
-                <a href="detalle.html"><h3>Título 3</h3></a>
-                <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
-                <time datetime="2023-09-25T18:00:00">Fecha 3</time>
-                <p>Videojuego X</p>
-            </article>
-
-            <article>
-                <a href="detalle.html"><h3>Título 4</h3></a>
-                <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
-                <time datetime="2023-09-25T18:00:00">Fecha 4</time>
-                <p>Videojuego X</p>
-            </article>
-
-            <article>
-                <a href="detalle.html"><h3>Título 5</h3></a>
-                <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
-                <time datetime="2023-09-25T18:00:00">Fecha 5</time>
-                <p>Videojuego X</p>
-            </article>
+            <div>
+                <article>
+                    <h3>Título</h3>
+                    <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <p>
+                        <span>Videojuego X</span>
+                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                    </p>
+                </article>
+                <article>
+                    <h3>Título</h3>
+                    <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <p>
+                        <span>Videojuego X</span>
+                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                    </p>
+                </article>
+                <article>
+                    <h3>Título</h3>
+                    <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <p>
+                        <span>Videojuego X</span>
+                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                    </p>
+                </article>
+                <article>
+                    <h3>Título</h3>
+                    <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <p>
+                        <span>Videojuego X</span>
+                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                    </p>
+                </article>
+                <article>
+                    <h3>Título</h3>
+                    <a href="detalle.html"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <p>
+                        <span>Videojuego X</span>
+                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                    </p>
+                </article>
+            </div>    
         </section>
     </main>
 
     <footer>
-        &copy;
-        <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time>
-        <abbr title="Desarrollo de Aplicaciones Web">DAW</abbr>
-        <p>Autores:</p>
-        <p>Iker García Azorín</p>
-        <p>Pablo Guill Montero</p>
+        <p>&copy; <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time></p>
+        <p><abbr title="Desarrollo de Aplicaciones Web">DAW</abbr></p>
+        <p>Autores: Iker García Azorín y Pablo Guill Montero</p>
     </footer>
 </body>
 </html>

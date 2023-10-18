@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro-GameScape</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/css/fontello.css">
 </head>
 <body>
     <header>
-        <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
-        <a href="index.html"><span>GameScape</span></a>
+        <span>
+            <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
+            <a href="index.html"><span>GameScape</span></a>
+        </span>  
         <nav>
+            <label for="chkmenu">  <!--Para ocultar y sacar el menúdesplegable-->
+                &equiv;
+            </label>
+            <input type="checkbox" id="chkmenu" name="chkmenu">
             <ul id="menu">
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="buscar.html">BUSCAR</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-                <li><a href="registro.html">REGISTRO</a></li>
+                <li><a class="icon-inicio" href="index.html"><span>INICIO</span></a></li>
+                <li><a class="icon-buscar" href="buscar.html"><span>BUSCAR</span></a></li>
+                <li><a class="icon-login" id="login" href="login.html"><span>LOGIN</span></a></li>
+                <li><a class="icon-registro" id="registro" href="registro.html"><span>REGISTRO</span></a></li>
             </ul>
         </nav>
     </header>
@@ -22,84 +30,84 @@
     <main>
         <h1>Registro</h1>
         <form action="index_identificado.html">
-            <p>
-                <label for="nombre">
-                    <span>NOMBRE</span>
-                    <span><input type="text" name="nombre" id="nombre" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="pwd">
-                    <span>CONTRASEÑA</span>
-                    <span><input type="password" name="pwd" id="pwd" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="pwd2">
-                    <span>REPETIR CONTRASEÑA</span>
-                    <span><input type="password" name="pwd2" id="pwd2" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="email">
-                    <span>CORREO ELECTRÓNICO</span>
-                    <span><input type="email" name="email" id="email" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="sexo">
-                    <span>SEXO</span>
-                    <span><input type="text" name="sexo" id="sexo" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="fecha">
-                    <span>FECHA DE NACIMIENTO</span>
-                    <span><input type="date" name="fecha" id="fecha" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="ciudad">
-                    <span>CIUDAD</span>
-                    <span><input type="text" name="ciudad" id="ciudad" required></span>
-                </label>
-            </p>
-            <p>
-                <label for="pais">
-                    <span>PAÍS DE RESIDENCIA</span>
-                    <span>
-                        <select name="pais" id="pais">
-                            <option value="276">Alemania</option>
-                            <option value="020">Andorra</option>
-                            <option value="124">Canadá</option>
-                            <option value="152">Chile</option>
-                            <option value="156">China</option>
-                            <option value="192">Cuba</option>
-                            <option value="724">España</option>
-                            <option value="250">Francia</option>
-                            <option value="300">Grecia</option>
-                            <option value="392">Japón</option>
-                        </select>
-                    </span>
-                </label>
-            </p>
-            <p>
-                <label for="foto">
-                    <span>FOTO</span>
-                    <span><input type="file" name="foto" id="foto" accept="image/*" required></span>
-                </label>
-            </p>
-            <p><input type="submit" value="Registrarse"></p>
+            <div>
+                <p>
+                    <label for="nombre">
+                        <span>NOMBRE</span>
+                        <span><input type="text" name="nombre" id="nombre" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="pwd">
+                        <span>CONTRASEÑA</span>
+                        <span><input type="password" name="pwd" id="pwd" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="pwd2">
+                        <span>REPETIR CONTRASEÑA</span>
+                        <span><input type="password" name="pwd2" id="pwd2" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="email">
+                        <span>CORREO ELECTRÓNICO</span>
+                        <span><input type="email" name="email" id="email" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="sexo">
+                        <span>SEXO</span>
+                        <span><input type="text" name="sexo" id="sexo" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="fecha">
+                        <span>FECHA DE NACIMIENTO</span>
+                        <span><input type="date" name="fecha" id="fecha" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="ciudad">
+                        <span>CIUDAD</span>
+                        <span><input type="text" name="ciudad" id="ciudad" required></span>
+                    </label>
+                </p>
+                <p>
+                    <label for="pais">
+                        <span>PAÍS DE RESIDENCIA</span>
+                        <span>
+                            <select name="pais" id="pais">
+                                <option value="276">Alemania</option>
+                                <option value="020">Andorra</option>
+                                <option value="124">Canadá</option>
+                                <option value="152">Chile</option>
+                                <option value="156">China</option>
+                                <option value="192">Cuba</option>
+                                <option value="724">España</option>
+                                <option value="250">Francia</option>
+                                <option value="300">Grecia</option>
+                                <option value="392">Japón</option>
+                            </select>
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label for="foto">
+                        <span>FOTO</span>
+                        <span><input type="file" name="foto" id="foto" accept="image/*" required></span>
+                    </label>
+                </p>
+                <p><input type="submit" value="Registrarse"></p>
+            </div>
+            
         </form>
     </main>
 
     <footer>
-        &copy;
-        <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time>
-        <abbr title="Desarrollo de Aplicaciones Web">DAW</abbr>
-        <p>Autores:</p>
-        <p>Iker García Azorín</p>
-        <p>Pablo Guill Montero</p>
+        <p>&copy; <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time></p>
+        <p><abbr title="Desarrollo de Aplicaciones Web">DAW</abbr></p>
+        <p>Autores: Iker García Azorín y Pablo Guill Montero</p>
     </footer>
 </body>
 </html>
