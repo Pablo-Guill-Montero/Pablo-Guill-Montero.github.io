@@ -281,6 +281,24 @@ textarea{
     background-color: #d0e0fa;
 }
 
+#campos > fieldset{
+    width: 90%;
+}
+    #campos > fieldset > input{
+        width: 90%;
+    }
+    #campos > fieldset > datalist{
+        width: 90%;
+    }
+
+#campos > p > label > span {
+    margin: .5em;
+}
+
+    #campos > p > label > span > input {
+        width: 90%;
+    }
+
 /* ---------------------------------------------------------------------------------------------------------------------  */
 
 /* -------------- MEDIAQUERIES --------------------------------------------------------------------------------------------- */
