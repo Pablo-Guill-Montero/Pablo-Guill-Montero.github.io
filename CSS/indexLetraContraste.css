@@ -17,18 +17,19 @@ background-color: #2E414C;
 background-color: #336380;
 background-color: #0093E6; claro
 */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Public+Sans:wght@900&family=Roboto+Mono:wght@100;700&display=swap');
 :root{
-    --colorLetra: #F5F7FC;
-    --colorRegistro: #F5F7FC;
-    --claro: #0093E6;
-    --fondo: #7F94C9;
-    --colorNav: #415996;
-    --colorMain: #172D63;
-    --principal: #021033;
-    --letraHeader: black;
+    --colorLetra: #fff;
+    --colorRegistro: #3442ff;
+    --claro: #27b9a1;
+    --fondo: #000;
+    --colorNav: #303030;
+    --colorMain: #757474;
+    --principal: #1f2efa;
+    --letraHeader: #fff;
 
-    --fuente: 'Shantell Sans', cursive;
-    --tamano: medium;
+    --fuente: 'Public Sans' ;
+    --tamano: x-large;
 }
 
 body{

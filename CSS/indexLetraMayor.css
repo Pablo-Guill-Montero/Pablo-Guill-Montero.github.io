@@ -17,6 +17,7 @@ background-color: #2E414C;
 background-color: #336380;
 background-color: #0093E6; claro
 */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Public+Sans:wght@900&family=Roboto+Mono:wght@100;700&display=swap');
 :root{
     --colorLetra: #F5F7FC;
     --colorRegistro: #F5F7FC;
@@ -27,8 +28,8 @@ background-color: #0093E6; claro
     --principal: #021033;
     --letraHeader: black;
 
-    --fuente: 'Shantell Sans', cursive;
-    --tamano: medium;
+    --fuente: 'Public Sans' ;
+    --tamano: x-large;
 }
 
 body{

@@ -19,13 +19,13 @@ background-color: #0093E6; claro
 */
 :root{
     --colorLetra: #F5F7FC;
-    --colorRegistro: #F5F7FC;
+    --colorRegistro: #1652e9;
     --claro: #0093E6;
-    --fondo: #7F94C9;
-    --colorNav: #415996;
-    --colorMain: #172D63;
-    --principal: #021033;
-    --letraHeader: black;
+    --fondo: #19233d;
+    --colorNav: #061846;
+    --colorMain: #040f29;
+    --principal: #041d5c;
+    --letraHeader: #F5F7FC;
 
     --fuente: 'Shantell Sans', cursive;
     --tamano: medium;

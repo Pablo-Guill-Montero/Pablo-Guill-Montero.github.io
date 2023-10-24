@@ -20,16 +20,16 @@ background-color: #0093E6; claro
 :root{
     --colorLetra: #F5F7FC;
     --colorRegistro: #F5F7FC;
-    --claro: #0093E6;
-    --fondo: #7F94C9;
-    --colorNav: #415996;
-    --colorMain: #172D63;
-    --principal: #021033;
+    --claro: #dadada;
+    --fondo: #cecece;
+    --colorNav: #919191;
+    --colorMain: #505050;
+    --principal: #2b2b2b;
     --letraHeader: black;
 
     --fuente: 'Shantell Sans', cursive;
     --tamano: medium;
-}
+}  
 
 body{
     background-color: var(--fondo);
@@ -104,7 +104,7 @@ nav{
                 width: 100%;
             }
                 nav > ul > li > a:hover{
-                    background-color: #0092e6ac;
+                    background-color: #dbdbdbac;
                 }
 
 label{
