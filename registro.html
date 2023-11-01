@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./CSS/index.css" media="screen"> 
     <link rel="stylesheet" href="./CSS/colores.css" title="Modo Principal">
     <link rel="stylesheet" href="./CSS/css/fontello.css">
+
+    <script src="./JS/registro.js"></script>
 </head>
 <body>
     <header>
@@ -35,48 +37,48 @@
 
     <main>
         <h1>Registro</h1>
-        <form action="index_identificado.html">
+        <form action="index_identificado.html" id="formulario">
             <div>
                 <p>
                     <label for="nombre">
                         <span>NOMBRE</span>
-                        <span><input type="text" name="nombre" id="nombre" required></span>
+                        <span><input type="text" name="nombre" id="nombre" ></span>
                     </label>
                 </p>
                 <p>
                     <label for="pwd">
                         <span>CONTRASEÑA</span>
-                        <span><input type="password" name="pwd" id="pwd" required></span>
+                        <span><input type="password" name="pwd" id="pwd" ></span>
                     </label>
                 </p>
                 <p>
                     <label for="pwd2">
                         <span>REPETIR CONTRASEÑA</span>
-                        <span><input type="password" name="pwd2" id="pwd2" required></span>
+                        <span><input type="password" name="pwd2" id="pwd2" ></span>
                     </label>
                 </p>
                 <p>
                     <label for="email">
                         <span>CORREO ELECTRÓNICO</span>
-                        <span><input type="email" name="email" id="email" required></span>
+                        <span><input type="email" name="email" id="email" ></span>
                     </label>
                 </p>
                 <p>
                     <label for="sexo">
                         <span>SEXO</span>
-                        <span><input type="text" name="sexo" id="sexo" required></span>
+                        <span><input type="text" name="sexo" id="sexo" ></span>
                     </label>
                 </p>
                 <p>
                     <label for="fecha">
                         <span>FECHA DE NACIMIENTO</span>
-                        <span><input type="date" name="fecha" id="fecha" required></span>
+                        <span><input type="date" name="fecha" id="fecha" ></span>
                     </label>
                 </p>
                 <p>
                     <label for="ciudad">
                         <span>CIUDAD</span>
-                        <span><input type="text" name="ciudad" id="ciudad" required></span>
+                        <span><input type="text" name="ciudad" id="ciudad" ></span>
                     </label>
                 </p>
                 <p>
@@ -101,10 +103,10 @@
                 <p>
                     <label for="foto">
                         <span>FOTO</span>
-                        <span><input type="file" name="foto" id="foto" accept="image/*" required></span>
+                        <span><input type="file" name="foto" id="foto" accept="image/*" ></span>
                     </label>
                 </p>
-                <p><input type="submit" value="Registrarse"></p>
+                <p><input type="button" value="Registrarse" id="boton"></p>
             </div>
             
         </form>
