@@ -11,7 +11,10 @@
     <link rel="alternate stylesheet" href="./CSS/indexLetraContraste.css" title="Modo Letra Mayor y Alto Contraste"> 
     <link rel="stylesheet" href="./CSS/index.css" media="screen"> 
     <link rel="stylesheet" href="./CSS/colores.css" title="Modo Principal">
+
     <link rel="stylesheet" href="./CSS/css/fontello.css">
+
+    <script src="./JS/solicitar_album.js"></script>
 </head>
 <body>
     <header>
@@ -38,7 +41,7 @@
         <h1>Solicitar impresión del álbum</h1>
         <p>Mediante esta opción puedes solicitar la impresión y envio de uno de tus álbumes a todo color, toda resolución.</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia nam modi voluptatibus odio distinctio nulla ex aliquam sit provident, cumque autem quod veniam amet dolor adipisci deserunt</p>
-        <section>
+        <section id="tablas">
             <h2>Tarifas</h2>
             <table>
                 <tr>
@@ -66,7 +69,7 @@
                     <td>0.05&euro; por foto</td>
                 </tr>
                 <tr>
-                    <td>Resolución &lt; 300dpi</td>
+                    <td>Resolución &gt; 300dpi</td>
                     <td>0.02 por foto</td>
                 </tr>
             </table>
@@ -170,7 +173,7 @@
                             <span><input type="checkbox" name="col_impre" id="col_impre"></span>
                         </label>
                     </p>
-                    <input type="submit" value="Enviar">
+                    <input type="button" value="Enviar" id="boton">
                 </div>
             </form>
                 
