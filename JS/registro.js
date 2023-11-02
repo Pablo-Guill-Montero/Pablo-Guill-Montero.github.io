@@ -23,6 +23,7 @@ function validar(pwd, nombre, pw2, email, sexo){
         let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
                     html = '';
                 html += '<h3>El formato del nombre es incorrecto</h3>';
+                html += '<p>El nombre debe estar compuesto por letras del alfbeto ingles, numeros, no puede empezar po un numero, tiene que tener más de 3 caracteres y menos de 15</p>';
                 html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
 
                 dialogo.innerHTML = html;
@@ -31,12 +32,13 @@ function validar(pwd, nombre, pw2, email, sexo){
                 dialogo.showModal();
         
     }
-    else if(pwd == null || cadenaEspacios(pwd) || pwd.length < 6 || pwd.length > 15 || aceptadasInglesCon(pwd) || tieneMaysMinus(pwd) ){
+    else if(pwd == null || cadenaEspacios(pwd) || pwd.length < 6 || pwd.length > 15 || aceptadasInglesCon(pwd) || tieneMaysMinus(pwd) || tieneNum(pwd) ){
         prueba = false;
 
         let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
                     html = '';
                 html += '<h3>El formato de la contraseña es incorrecto</h3>';
+                html += '<p>La contraseña debe componerse por letras del alfabeto ingles, numeros, el guión y el guion bajo, debe de tener más de 6 cracteres y menos de 15, tabién debe contener un número, una letra en minuscula y una letra en mayuscuala</p>';
                 html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
 
                 dialogo.innerHTML = html;
@@ -46,7 +48,16 @@ function validar(pwd, nombre, pw2, email, sexo){
         
     }
     else if(pw2 != pwd){
-        prueba = false;
+        let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
+                    html = '';
+                html += '<h3>El formato de la contraseña es incorrecto</h3>';
+                html += '<p>La contraseña debe ser igual a la primera</p>';
+                html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
+
+                dialogo.innerHTML = html;
+
+                document.body.appendChild(dialogo);//añadir nodo hijo al final
+                dialogo.showModal();
     }
     else if(email == null || emailCorrecto(email) || email.length > 254){ //hacer un par de puevas  más
         prueba = false;
@@ -54,6 +65,7 @@ function validar(pwd, nombre, pw2, email, sexo){
         let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
                     html = '';
                 html += '<h3>El formato del emai es incorrecto</h3>';
+                html += '<p>El email deberia coponerse de: parteLocal@subdominio1.subdominio2...subdominioN</p>';
                 html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
 
                 dialogo.innerHTML = html;
@@ -66,7 +78,7 @@ function validar(pwd, nombre, pw2, email, sexo){
         
         let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
                     html = '';
-                html += '<h3>se debe de elegir un genero</h3>';
+                html += '<h3>Se debe de elegir un genero</h3>';
                 html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
 
                 dialogo.innerHTML = html;
@@ -74,18 +86,13 @@ function validar(pwd, nombre, pw2, email, sexo){
                 document.body.appendChild(dialogo);//añadir nodo hijo al final
                 dialogo.showModal();
     }
-
+console.log("finalmente el resulatdo ha sido" + prueba);
     if(prueba){
         const formulario = document.getElementById("formulario");
         formulario.submit();
     }
 
     
-
-
-
-
-
 
     /*if(prueba == false){
         let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
@@ -111,8 +118,7 @@ function cadenaEspacios(texto){
 function cerrarDialogo(){
     document.querySelector('dialog').close();
     document.querySelector('dialog').remove();//eliminarlo
-    //redirigir a login
-    location.href = 'login.html';
+
 }
 
 function noEmpiezNumero(texto){
@@ -150,6 +156,7 @@ function tieneMaysMinus(texto){
     prueba = false;
   }
 
+  console.log("contraseña 1" + prueba);
   return prueba;
 }
 
@@ -182,6 +189,10 @@ function emailCorrecto(texto){
             }
         }
         
+        
+    }
+    else{
+        prueba = true
     }
 
     return prueba;
@@ -262,4 +273,11 @@ function pruebaDominio3(texto){
         return false;
     }
     
+}
+
+
+function tieneNum(texto){
+    var aux = /^[0-9]+$/.test(texto);
+    console.log("contraseña 2" + aux)
+    return aux;
 }

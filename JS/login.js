@@ -45,6 +45,5 @@ function cadenaEspacios(texto){
 function cerrarDialogo(){
     document.querySelector('dialog').close();
     document.querySelector('dialog').remove();//eliminarlo
-    //redirigir a login
-    location.href = 'login.html';
+
 }
