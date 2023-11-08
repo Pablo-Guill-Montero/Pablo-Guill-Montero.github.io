@@ -1,41 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitar_album-GameScape</title>
-    <link rel="alternate stylesheet" href="./CSS/indexAltoContraste.css" title="Modo Alto Contraste">
-    <link rel="alternate stylesheet" href="./CSS/indexNoche.css" title="Modo Noche">
-    <link rel="stylesheet" href="./CSS/indexImpresion.css" media="print">
-    <link rel="alternate stylesheet" href="./CSS/indexLetraMayor.css" title="Modo Letra Mayor">
-    <link rel="alternate stylesheet" href="./CSS/indexLetraContraste.css" title="Modo Letra Mayor y Alto Contraste"> 
-    <link rel="stylesheet" href="./CSS/index.css" media="screen"> 
-    <link rel="stylesheet" href="./CSS/colores.css" title="Modo Principal">
-
-    <link rel="stylesheet" href="./CSS/css/fontello.css">
-
-    <script src="./JS/solicitar_album.js"></script>
-</head>
-<body>
-    <header>
-        <span>
-            <a href="index_identificado.html"><img src="imgenes/logo.png" alt="logo"></a>
-            <a href="index.html"><span>GameScape</span></a>
-        </span>  
-        <nav>
-            <label for="chkmenu">  <!--Para ocultar y sacar el menúdesplegable-->
-                &equiv;
-            </label>
-            <input type="checkbox" id="chkmenu" name="chkmenu">
-            <ul id="menu">
-                <li><a class="icon-inicio" href="index.html"><span>INICIO</span></a></li>
-                <li><a class="icon-buscar" href="buscar.html"><span>BUSCAR</span></a></li>
-                <li><a class="icon-nuevaImagen" href="nueva_imagen.html">NUEVA IMAGEN</a></li>
-                <li><a class="icon-nuevoAlbum" href="nuevo_album.html">NUEVO ÁLBUM</a></li>
-                <li><a class="icon-editarPerfil" href="usuario.html">USUARIO</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <main>
         <h1>Solicitar impresión del álbum</h1>
@@ -78,7 +40,7 @@
         <section>
             <h2>Formulario de solicitud</h2>
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-            <form action="solicitar_album_respuesta.html">
+            <form action="solicitar_album_respuesta.php">
                 <div id="campos">
                     <p>
                         <label for="nombre">
@@ -180,12 +142,3 @@
         </section>
         
     </main>
-
-    <footer>
-        <p>&copy; <time datetime="2023-09-25T18:00:00">25 de Septiembre de 2023</time></p>
-        <p><abbr title="Desarrollo de Aplicaciones Web">DAW</abbr></p>
-        <p>Autores: Iker García Azorín y Pablo Guill Montero</p>
-        <p><a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-    </footer>
-</body>
-</html>
