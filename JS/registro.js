@@ -6,14 +6,16 @@ function init (){
     const email  = document.getElementById('email');
     const sexo  = document.getElementById('sexo');
     const nombre = document.getElementById('nombre');
+    const fecha = document.getElementById('fecha');
+
 
     boton.addEventListener('click', function(){
-        validar(pwd.value, nombre.value, pwd2.value, email.value, sexo.value);
+        validar(pwd.value, nombre.value, pwd2.value, email.value, sexo.value, fecha.value);
     });
     //boton.addEventListener('click', validar);
 }
 
-function validar(pwd, nombre, pw2, email, sexo){
+function validar(pwd, nombre, pw2, email, sexo, fecha){
     
     var prueba = true;
 
@@ -79,6 +81,19 @@ function validar(pwd, nombre, pw2, email, sexo){
         let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
                     html = '';
                 html += '<h3>Se debe de elegir un genero</h3>';
+                html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
+
+                dialogo.innerHTML = html;
+
+                document.body.appendChild(dialogo);//añadir nodo hijo al final
+                dialogo.showModal();
+    }
+    else if(!fecha || mayorEdad(fecha)){ //hacer un par de puevas  más
+        prueba = false;
+        
+        let dialogo = document.createElement('dialog'), //crea elelemento HTML dialogo
+                    html = '';
+                html += '<h3>Se debe de ser mayor de edad y se debe incluir una fecha de nacimiento</h3>';
                 html += '<button onclick= "cerrarDialogo();">Cerrar</button>';
 
                 dialogo.innerHTML = html;
@@ -280,4 +295,21 @@ function tieneNum(texto){
     var aux = /^[0-9]+$/.test(texto);
     console.log("contraseña 2" + aux)
     return aux;
+}
+
+function mayorEdad(fecha) {
+    const fechaNacimiento = new Date(fecha);
+    const fechaActual = new Date();
+    
+    // Calcula la diferencia de años
+    const edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+    // Verifica si la persona es mayor de 18
+    if (edad >= 18) {
+        console.log("Fecha válida" + edad);
+        return false;
+    } else {
+        console.log("Fecha inválida" + edad);
+        return true;
+    }
 }
