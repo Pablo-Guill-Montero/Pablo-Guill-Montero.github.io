@@ -35,7 +35,14 @@
                     <td>0.02 por foto</td>
                 </tr>
             </table>
+
+            <h2>Tabla PHP</h2>
+            <?php include './HTML/tabla.php'; ?>
+
+            <h2>Tabla JS</h2>
         </section>
+        
+        
 
         <section>
             <h2>Formulario de solicitud</h2>
