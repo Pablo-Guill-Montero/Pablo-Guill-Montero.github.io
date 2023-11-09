@@ -1,3 +1,6 @@
 <?php 
-    $titulo = "Resultado-GameScape"
+    $titulo = "Resultado-GameScape";
+    $tituloFoto = $_GET["titulo"];
+    $fecha = $_GET["fecha"];
+    $videojuego = $_GET["videojuego"];
 ?>

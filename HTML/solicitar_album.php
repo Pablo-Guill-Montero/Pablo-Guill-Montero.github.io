@@ -42,12 +42,10 @@
             <h2>Tabla JS</h2>
         </section>
         
-        
-
         <section>
             <h2>Formulario de solicitud</h2>
             <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu álbum</p>
-            <form action="solicitar_album_respuesta.php">
+            <form method="post" action="./solicitar_album_respuesta.php">
                 <div id="campos">
                     <p>
                         <label for="nombre">
@@ -142,7 +140,7 @@
                             <span><input type="checkbox" name="col_impre" id="col_impre"></span>
                         </label>
                     </p>
-                    <input type="button" value="Enviar" id="boton">
+                    <input type="submit" value="Enviar" id="boton">
                 </div>
             </form>
                 

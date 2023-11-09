@@ -1,7 +1,15 @@
 
     <main>
         <h1>Resultado</h1>
-        <form action="resultado.php">
+        <?php
+            if ($tituloFoto!="")
+                echo "<p>Título buscado: $tituloFoto<p>";
+            if ($fecha!="")
+                echo "<p>Fecha buscada: $fecha<p>";
+            if ($videojuego!="")
+                echo "<p>Videojuego buscado: $videojuego<p>";
+        ?>
+        <form action="./resultado.php">
             <div>
                 <p>
                     <label for="titulo">
@@ -31,47 +39,43 @@
             <h2>Resultado de la búsqueda</h2>
             <div>
                 <article>
-                    <h3>Título</h3>
-                    <a href="detalle.php"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <h3>Random team</h3>
+                    <a href="./detalle.php?id=1"><img src="imgenes/img.jpg" alt="foto"></a>
                     <p>
-                        <span>Videojuego X</span>
-                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                        <span>Team Fortess 2</span>
+                        <time datetime="2023-01-17T18:00:00">17-01-2023</time>
                     </p>
                 </article>
-    
                 <article>
-                    <h3>Título</h3>
-                    <a href="detalle.php"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <h3>El gran árbol áureo</h3>
+                    <a href="./detalle.php?id=2"><img src="imgenes/aureo.jpeg" alt="foto"></a>
                     <p>
-                        <span>Videojuego X</span>
-                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                        <span>Elden Ring</span>
+                        <time datetime="2023-07-05T18:00:00">05-07-2023</time>
                     </p>
                 </article>
-    
                 <article>
-                    <h3>Título</h3>
-                    <a href="detalle.php"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <h3>Random team</h3>
+                    <a href="./detalle.php?id=3"><img src="imgenes/img.jpg" alt="foto"></a>
                     <p>
-                        <span>Videojuego X</span>
-                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                        <span>Team Fortess 2</span>
+                        <time datetime="2023-01-17T18:00:00">17-01-2023</time>
                     </p>
                 </article>
-    
                 <article>
-                    <h3>Título</h3>
-                    <a href="detalle.php"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <h3>El gran árbol áureo</h3>
+                    <a href="./detalle.php?id=4"><img src="imgenes/aureo.jpeg" alt="foto"></a>
                     <p>
-                        <span>Videojuego X</span>
-                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                        <span>Elden Ring</span>
+                        <time datetime="2023-07-05T18:00:00">05-07-2023</time>
                     </p>
                 </article>
-    
                 <article>
-                    <h3>Título</h3>
-                    <a href="detalle.php"><img src="imgenes/img.jpg" alt="foto"></a>
+                    <h3>Random team</h3>
+                    <a href="./detalle.php?id=5"><img src="imgenes/img.jpg" alt="foto"></a>
                     <p>
-                        <span>Videojuego X</span>
-                        <time datetime="2023-09-25T18:00:00">Fecha 1</time>
+                        <span>Team Fortess 2</span>
+                        <time datetime="2023-01-17T18:00:00">17-01-2023</time>
                     </p>
                 </article>
             </div>

@@ -1,3 +1,3 @@
 <?php 
-    $titulo = "Inicio_Identificado-GameScape"
+    $titulo = "Inicio_Identificado-GameScape";
 ?>

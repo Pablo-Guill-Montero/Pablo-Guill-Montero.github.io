@@ -1,7 +1,7 @@
 
     <main>
         <h1>Buscar</h1>
-        <form action="resultado.php">
+        <form action="./resultado.php">
             <div>
                 <p>
                     <label for="titulo">
