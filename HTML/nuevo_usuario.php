@@ -1,5 +1,5 @@
 
-    <main>
+<main>
         <?php
         if(isset($_GET['nombre']) && isset($_GET['pwd']) && isset($_GET['pwd2']) && isset($_GET['email']) && isset($_GET['sexo']) && isset($_GET['fecha']) && isset($_GET['ciudad']) && isset($_GET['pais'])){  
             $nombre = $_GET['nombre'];
@@ -12,13 +12,13 @@
             $pais = $_GET['pais'];
 
             if($nombre ==""){
-                echo '<p>Tienes que rellenar el nombre</p>';
+                echo '<p>Tienes que relenar el nombre</p>';
             }
             if($pwd ==""){
-                echo '<p>Tienes que rellenar la contraseña</p>';
+                echo '<p>Tienes que relenar la contraseña</p>';
             }
             if($pwd2 ==""){
-                echo '<p>Tienes que rellenar la 2ª contraseña</p>';
+                echo '<p>Tienes que relenar la contraseña2</p>';
             }
             else if($pwd != $pwd2){
                 echo '<p>Las 2 contraseñase deberian ser iguales</p>';
@@ -35,80 +35,75 @@
         }
         
         ?>
-        <h1>Registro</h1>
-        <form method="POST" action="./controller/validador_registro.php" id="formulario">
+        <h1>Nuevo Usuario</h1>
+        <form>
             <div>
                 <p>
                     <label for="nombre">
                         <span>NOMBRE</span>
-                        <span><input type="text" name="nombre" id="nombre" value='<?=$nombre?>'></span>
+                        <span>
+                            <p><?=$nombre?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="pwd">
                         <span>CONTRASEÑA</span>
-                        <span><input type="text" name="pwd" id="pwd" value='<?=$pwd?>'></span>
+                        <span>
+                            <p><?=$pwd?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="pwd2">
                         <span>REPETIR CONTRASEÑA</span>
-                        <span><input type="text" name="pwd2" id="pwd2" value='<?=$pwd2?>'></span>
+                        <span>
+                            <p><?=$pwd2?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="email">
                         <span>CORREO ELECTRÓNICO</span>
-                        <span><input type="text" name="email" id="email" value='<?=$email?>'></span>
+                        <span>
+                            <p><?=$email?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="sexo">
                         <span>SEXO</span>
-                        <span><input type="text" name="sexo" id="sexo" value='<?=$sexo?>'></span>
+                        <span>
+                            <p><?=$sexo?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="fecha">
                         <span>FECHA DE NACIMIENTO</span>
-                        <span><input type="text" name="fecha" id="fecha" value='<?=$fecha?>'></span>
+                        <span>
+                            <p><?=$fecha?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="ciudad">
                         <span>CIUDAD</span>
-                        <span><input type="text" name="ciudad" id="ciudad" value='<?=$ciuudad?>'></span>
+                        <span>
+                            <p><?=$ciuudad?></p>
+                        </span>
                     </label>
                 </p>
                 <p>
                     <label for="pais">
                         <span>PAÍS DE RESIDENCIA</span>
                         <span>
-                            <input type="text" name="pais" id="pais"value='<?=$pais?>'> 
-                            <!-- <select name="pais" id="pais">
-                                <option value="276">Alemania</option>
-                                <option value="020">Andorra</option>
-                                <option value="124">Canadá</option>
-                                <option value="152">Chile</option>
-                                <option value="156">China</option>
-                                <option value="192">Cuba</option>
-                                <option value="724">España</option>
-                                <option value="250">Francia</option>
-                                <option value="300">Grecia</option>
-                                <option value="392">Japón</option>
-                            </select> -->
+                            <p><?=$pais?></p>
                         </span>
                     </label>
                 </p>
-                <p>
-                    <label for="foto">
-                        <span>FOTO</span>
-                        <span><input type="file" name="foto" id="foto" accept="image/*" ></span>
-                    </label>
-                </p>
-                <p><input type="submit" value="Registrarse" id="boton"></p>
+                
             </div>
-            
         </form>
         
     </main>
