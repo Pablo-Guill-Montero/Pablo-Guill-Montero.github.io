@@ -14,13 +14,18 @@
 
     <link rel="stylesheet" href="./CSS/css/fontello.css">
 
-    <?php
+    
+    <!-- < ?php
         if ($titulo == "Solicitar_Album-GameScape")
             echo '<script src="./JS/solicitar_album.js"></script>';
         else if ($titulo == "Login-GameScape")
             echo '<script src="./JS/login.js"></script>';
         else if ($titulo == "Registro-GameScape")
             echo '<script src="./JS/registro.js"></script>';
-    ?>
-
+    ? > -->
+    <?php
+        if ($titulo == "Solicitar_Album-GameScape")
+            echo '<script src="./JS/solicitar_album.js"></script>';
+    ?>  
+    
 </head>

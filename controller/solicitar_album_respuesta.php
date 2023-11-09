@@ -38,24 +38,26 @@
         $tarifa = $lim1 * $factor1 + $lim2 * $factor2 + ($paginas - ($lim2 + $lim1)) * $factor3;
     }
 
-    if(!$col_impre && $resolucion <= 300){
+    if(!$col_impre && $resolucion >= 450){
         //Blanco y negro 450-900dpi
-        
+        echo "Blanco y negro 450-900dpi";
         $tarifa = $tarifa + $fotos*0.02;
     }
     else if($col_impre && $resolucion <= 300){
         //Color 150-300dpi
+        echo "Color 150-300dpi";
         $tarifa = $tarifa + $fotos*0.05;
     }
     else if($col_impre && $resolucion >= 450){
         //Color 450-900dpi
+        echo "Color 150-300dpi";
         $tarifa = $tarifa + $fotos*0.02;
         $tarifa = $tarifa + $fotos*0.05;
     }
 
 
-    $coste = $tarifa . "€";
-
-    $total = ($tarifa * $cantidad) . "€"
+    $coste = number_format($tarifa, 2) . "€";
+    
+    $total = number_format($tarifa * $cantidad, 2) . "€";
 
 ?>
