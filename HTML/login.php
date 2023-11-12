@@ -1,6 +1,8 @@
 
 <main>
         <?php
+        $nombre = "";
+        $pwd = "";
         if(isset($_GET['nombre']) && isset($_GET['pwd'])){  
             $nombre = $_GET['nombre'];
             $pwd = $_GET['pwd'];
@@ -11,16 +13,13 @@
             if($pwd ==""){
                 echo '<p>Tienes que rellenar la contraseña</p>';
             }
-        }else{
-            $nombre = "";
-            $pwd = "";
-            if(isset($_GET['modo']) ){  
-                echo '<p>El usuario o la contraseña es incorrecto</p>';
-            }
+        }
+        if(isset($_GET['modo'])){ 
+            echo '<p>El usuario o la contraseña es incorrecto</p>';
         }
         
         ?>
-        <h1>Registro</h1>
+        <h1>Login</h1>
         <form method="POST" action="./controller/validador_login.php" id="formulario">
             <div>
                 <p>
@@ -35,7 +34,7 @@
                         <span><input type="text" name="pwd" id="pwd" value='<?=$pwd?>'></span>
                     </label>
                 </p>
-                <p><input type="submit" value="Registrarse" id="boton"></p>
+                <p><input type="submit" value="Login" id="boton"></p>
             </div>
             
         </form>
