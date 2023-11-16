@@ -1,3 +1,3 @@
 <?php 
-    $titulo = "Aviso-GameScape"
+    $titulo = "Aviso-GameScape";
 ?>

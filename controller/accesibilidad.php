@@ -1,3 +1,3 @@
 <?php 
-    $titulo = "Accesibilidad-GameScape"
+    $titulo = "Accesibilidad-GameScape";
 ?>

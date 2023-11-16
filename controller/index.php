@@ -1,3 +1,6 @@
 <?php 
-    $titulo = "Inicio-GameScape"
+    $titulo = "Inicio-GameScape";
+    if (isset($_SESSION["usuario"]))
+        $archivo = "detalle.php";
+    else $archivo = "aviso.php";
 ?>
