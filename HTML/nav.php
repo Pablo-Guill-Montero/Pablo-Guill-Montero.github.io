@@ -14,11 +14,12 @@
                 <li><a class="icon-buscar" href="./buscar.php"><span>BUSCAR</span></a></li>
                 <?php
                     if (isset($_SESSION["usuario"])){
+                        $usu = $_SESSION["usuario"];
                         echo <<<hereDOC
                             <li><a class="icon-nuevaImagen" href="./nueva_imagen.php"><span>NUEVA IMAGEN</span></a></li>
                             <li><a class="icon-nuevoAlbum" href="./nuevo_album.php"><span>NUEVO ÁLBUM</span></a></li>
-                            <li><a class="icon-editarPerfil" href="./usuario.php"><span>USUARIO</span></a></li>
-                            <li><a class="icon-login" id="login" href="./login.php"><span>SALIR</span></a></li>
+                            <li><a class="icon-editarPerfil" href="./usuario.php"><span>$usu</span></a></li>
+                            <li><a class="icon-login" id="logout" href="./logout.php"><span>SALIR</span></a></li>
                         hereDOC;
                     }else{
                         echo <<<hereDOC

@@ -20,6 +20,47 @@ if (isset($_POST['nombre']) && isset($_POST['pwd'])) {
             $nombre == $usuario2 && $pwd == $contra2 ||
             $nombre == $usuario3 && $pwd == $contra3 ||
             $nombre == $usuario4 && $pwd == $contra4) {
+                
+                
+                if(isset($_POST['recuerda'])){
+                    $expira = time() + 90 * 24 * 60 *  60;
+                    $hoy = time();
+
+                    setcookie(
+                        "usuario",
+                         $nombre,
+                         $expira,
+                         '/'
+                    );
+
+                    setcookie(
+                         "pwd",
+                         $pwd,
+                         $expira,
+                         '/'
+                    );
+
+                    setcookie(
+                        "ultima",
+                        $hoy,
+                        $expira,
+                         '/'
+                    );
+
+                    setcookie(
+                        "estilo",
+                        "principal",
+                        $expira,
+                         '/'
+                    );
+                }
+                session_start();
+                $_SESSION['usuario'] = $nombre;
+                $_SESSION['pwd'] = $pwd;
+
+
+
+
             header("Location: ./../usuario.php?$nombre");
         } else {
             header("Location: ./../login.php?nombre=$nombre&pwd=$pwd&modo=1");

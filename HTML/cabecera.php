@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./CSS/colores.css" title="Modo Principal">
 
     <link rel="stylesheet" href="./CSS/css/fontello.css">
+    <script src="./JS/login.js"></script>
 
     
     <!-- < ?php
