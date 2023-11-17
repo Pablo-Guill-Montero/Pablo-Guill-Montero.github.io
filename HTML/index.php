@@ -7,6 +7,7 @@
         //te estamos recordando
         $nombre =  $_COOKIE['usuario'];
         $pwd =  $_COOKIE['pwd'];
+        $estilo =  $_COOKIE['estilo'];
         if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
             // Ya estas iniciado y te recordamos
         }
@@ -15,6 +16,7 @@
             
             $_SESSION['usuario'] = $nombre;
             $_SESSION['pwd'] = $pwd;
+            $_SESSION['estilo'] = $estilo;
 
             $fecha = $_COOKIE['ultima'];
                 setcookie('ultima', time(), time()+ 90 * 24 * 60 *  60, '/');
@@ -32,7 +34,7 @@
         // Ya estas iniciado
         $nombre =  $_SESSION['usuario'];
         $pwd =  $_SESSION['pwd'];
-   
+        $estilo = $_SESSION['estilo'];
     }
 ?>
 <main>

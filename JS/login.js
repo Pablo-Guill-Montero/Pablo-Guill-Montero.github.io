@@ -49,8 +49,7 @@ function regreso(nombre, fecha, hora, pagina) {
     // Construye el contenido del diálogo
     let contenidoHTML = `
         <h3>${saludo} ${nombre}, su última visita fue ${fecha} a las ${horaAux}</h3>
-        <button onclick="cerrarDialogo('${pagina}')">Cerrar</button>
-    `;
+        <button onclick="cerrarDialogo('${pagina}')">Cerrar</button>`;
 
     // Establece el contenido del diálogo
     dialogo.innerHTML = contenidoHTML;
