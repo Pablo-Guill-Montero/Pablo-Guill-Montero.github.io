@@ -119,13 +119,13 @@
                     </p>
                     <p> 
                         <label for="album">
-                            <span>Álbum de PI</span>
+                            <span>Álbum de <?=$_SESSION['usuario'];?></span>
                             <span>
                                 <select name="album" id="album">
                                     <?php
                                         $idUsuario = $_SESSION["IdUsuario"];
                                         $misAlbumes = getAlbumes($id, $idUsuario);
-                                        
+
                                         while($row = mysqli_fetch_assoc($misAlbumes)){//cuando no hay filas devuelve false y termina
                                             echo "<option value='{$row["IdAlbum"]}'>{$row["Titulo"]}</option>";
                                         }

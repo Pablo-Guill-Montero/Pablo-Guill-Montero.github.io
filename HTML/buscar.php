@@ -77,7 +77,7 @@
                                 <p>
                                     <span name="pais">{$row["Pais"]}</span>
                                     <time datetime="{$row["FRegistro"]}">{$row["FRegistro"]}</time>
-                                    <span name="usuario">{$row["Usuario"]}</span>
+                                    <span name="usuario"><a href="./perfil.php?id={$row["IdUsuario"]}">{$row["Usuario"]}</a></span>
                                 </p>
                             </article>
                         hereDOC;

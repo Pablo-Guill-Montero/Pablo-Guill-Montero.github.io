@@ -32,7 +32,7 @@
         $album = strtolower($album);
     
         $resultado = mysqli_query($id, 
-            "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo
+            "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo, IdUsuario, IdAlbum
             FROM fotos f, usuarios , albumes a, paises
             WHERE Usuario = IdUsuario
             AND Album = IdAlbum
