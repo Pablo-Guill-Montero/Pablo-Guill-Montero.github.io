@@ -1,4 +1,6 @@
-   
+<?php
+    include "./controller/sessionController.php";
+?>
     <main>
         <h1>Aviso</h1>
         <section class="aviso">

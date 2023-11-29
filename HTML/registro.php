@@ -1,43 +1,5 @@
 <?php
-    $nombre = "";
-    $pwd = "";
-    //session_start();
-
-    if(isset($_COOKIE['usuario']) && isset($_COOKIE['pwd']) && isset($_COOKIE['ultima'])){
-        //te estamos recordando
-        $nombre =  $_COOKIE['usuario'];
-        $pwd =  $_COOKIE['pwd'];
-        $estilo =  $_COOKIE['estilo'];
-        if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
-            // Ya estas iniciado y te recordamos
-        }
-        else{
-            //te recordamos pero no estas iniciado 
-            
-            $_SESSION['usuario'] = $nombre;
-            $_SESSION['pwd'] = $pwd;
-            $_SESSION['estilo'] = $estilo;
-
-            $fecha = $_COOKIE['ultima'];
-                setcookie('ultima', time(), time()+ 90 * 24 * 60 *  60, '/');
-            echo '<script>';
-            echo 'regreso("' . $nombre . '", "' . date('Y-m-d', $fecha) . '", "' . date('H:i', $fecha) . '", "' . "usuario" . '");';
-            echo '</script>';
-
-            $_COOKIE['ultima'] = time();
-        // header("Location: ./usuario.php?$nombre");
-
-            
-        }
-    }
-    else if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
-        // Ya estas iniciado
-        $nombre =  $_SESSION['usuario'];
-        $pwd =  $_SESSION['pwd'];
-        $estilo = $_SESSION['estilo'];
-
-        header("Location: ./usuario.php?$nombre");
-    }
+    include "./controller/sessionController.php";
 ?>
     <main>
         <?php
@@ -124,19 +86,15 @@
                     <label for="pais">
                         <span>PAÍS DE RESIDENCIA</span>
                         <span>
-                            <input type="text" name="pais" id="pais"value='<?=$pais?>'> 
-                            <!-- <select name="pais" id="pais">
-                                <option value="276">Alemania</option>
-                                <option value="020">Andorra</option>
-                                <option value="124">Canadá</option>
-                                <option value="152">Chile</option>
-                                <option value="156">China</option>
-                                <option value="192">Cuba</option>
-                                <option value="724">España</option>
-                                <option value="250">Francia</option>
-                                <option value="300">Grecia</option>
-                                <option value="392">Japón</option>
-                            </select> -->
+                            <select name="Pais" id="Pais">
+                                <?php
+                                    while($row = mysqli_fetch_assoc($resultado)){//cuando no hay filas devuelve false y termina
+                                        echo "<option value='{$row["IdPais"]}'>{$row["NomPais"]}</option>";
+                                    }
+                                    mysqli_free_result($resultado);
+                                    mysqli_close($id);
+                                ?>
+                            </select>
                         </span>
                     </label>
                 </p>

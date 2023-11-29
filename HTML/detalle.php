@@ -1,43 +1,5 @@
 <?php
-    $nombre = "";
-    $pwd = "";
-    //session_start();
-
-    if(isset($_COOKIE['usuario']) && isset($_COOKIE['pwd']) && isset($_COOKIE['ultima'])){
-        //te estamos recordando
-        $nombre =  $_COOKIE['usuario'];
-        $pwd =  $_COOKIE['pwd'];
-        $estilo =  $_COOKIE['estilo'];
-        if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
-            // Ya estas iniciado y te recordamos
-
-
-        }
-        else{
-            //te recordamos pero no estas iniciado 
-            
-            $_SESSION['usuario'] = $nombre;
-            $_SESSION['pwd'] = $pwd;
-            $_SESSION['estilo'] = $estilo;
-
-            $fecha = $_COOKIE['ultima'];
-                setcookie('ultima', time(), time()+ 90 * 24 * 60 *  60, '/');
-            echo '<script>';
-            echo 'regreso("' . $nombre . '", "' . date('Y-m-d', $fecha) . '", "' . date('H:i', $fecha) . '", "' . "detalle" . '");';
-            echo '</script>';
-
-            $_COOKIE['ultima'] = time();
-        // header("Location: ./usuario.php?$nombre");
-
-            
-        }
-    }
-    else if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
-        // Ya estas iniciado
-        $nombre =  $_SESSION['usuario'];
-        $pwd =  $_SESSION['pwd'];
-        $estilo =  $_SESSION['estilo'];
-    }
+    include "./controller/sessionController.php";
 ?>
     <main>
         <h1>Detalle</h1>
@@ -45,13 +7,17 @@
             <?php
                 echo <<<hereDOC
                 <h2>$tituloFoto</h2>
-                <img src="imgenes/$ruta" alt="foto">
+                <img src="imgenes/$fichero" alt="$alternativo">
                 <p>
-                    <time datetime="$datetime">$fecha</time>
-                    <span>$videojuego</span>
-                    <span>$album</span>
-                    <a href="usuario.php">$usuario</a>
+                    <time datetime="$fechaRegistro">$fechaRegistro</time>
+                    <span>$pais</span>
+                    <span><a href="album.php?id=album">$tituloAlbum</a></span>
+                    <a href="usuario.php?id=$idUsuario">$usuario</a>
                 </p> 
+                <p>Fecha de la foto:
+                    <time datetime="$fecha">$fecha</time>
+                </p>
+                <p>Descripción: $descripcion</p>
                 hereDOC;
             ?>
             

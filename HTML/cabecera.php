@@ -7,20 +7,18 @@
     <link rel="stylesheet" href="./CSS/index.css" media="screen">
 
     <?php
-        if(isset($_SESSION['usuario']) && isset($_SESSION['pwd']))
-            $estilo = $_SESSION['estilo'];
-        else $estilo = "colores";
+        if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
+            $fic = $_SESSION['fichero'];
+            $des = $_SESSION['descripcion'];
+        }
+        else { 
+            $fic = "colores.css";
+            $des = "Estilo estándar";
+        }
 
-        if($estilo=="indexAltoContraste")
-            echo '<link rel="stylesheet" href="./CSS/indexAltoContraste.css" title="Modo Alto Contraste">';
-        else if($estilo=="indexNoche")
-            echo '<link rel="stylesheet" href="./CSS/indexNoche.css" title="Modo Noche">';
-        else if($estilo=="indexLetraMayor")
-            echo '<link rel="stylesheet" href="./CSS/indexLetraMayor.css" title="Modo Letra Mayor">';
-        else if($estilo=="indexLetraContraste")
-            echo '<link rel="stylesheet" href="./CSS/indexLetraContraste.css" title="Modo Letra Mayor y Alto Contraste">';
-        else echo '<link rel="stylesheet" href="./CSS/colores.css" title="Modo Principal">';
     ?>
+    <link rel="stylesheet" href="./CSS/<?=$fic;?>" title="<?=$des;?>">
+    
     <link rel="alternate stylesheet" href="./CSS/indexAltoContraste.css" title="Modo Alto Contraste">
     <link rel="alternate stylesheet" href="./CSS/indexNoche.css" title="Modo Noche">
     <link rel="alternate stylesheet" href="./CSS/indexLetraMayor.css" title="Modo Letra Mayor">

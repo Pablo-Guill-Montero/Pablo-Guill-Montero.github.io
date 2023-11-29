@@ -17,7 +17,6 @@
     && isset($_POST["fecha"]))){
         header("Location: ./index.php"); 
     }
-
     include './controller/solicitar_album_respuesta.php';
     include './HTML/cabecera.php';
     include './HTML/nav.php';
