@@ -7,9 +7,6 @@
     }
     echo "Todo va bien";
 
-    $idUsuario = $_SESSION["IdUsuario"];
-    $misAlbumes = getAlbumes($id, $idUsuario);
-
     function getAlbumes($id, $idUsuario){
         $retorno = mysqli_query($id, 
             "SELECT *

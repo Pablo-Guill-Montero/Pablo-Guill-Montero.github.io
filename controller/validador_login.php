@@ -13,6 +13,7 @@ if (isset($_POST['nombre']) && isset($_POST['pwd'])) {
         header("Location: ./../login.php?pwd=$pwd");
     }else {
         include './../model/loginModel.php';
+        header("Location: ./../usuario.php");
     }
 }
 ?>

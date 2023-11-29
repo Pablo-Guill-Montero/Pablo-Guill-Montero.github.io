@@ -123,6 +123,9 @@
                             <span>
                                 <select name="album" id="album">
                                     <?php
+                                        $idUsuario = $_SESSION["IdUsuario"];
+                                        $misAlbumes = getAlbumes($id, $idUsuario);
+                                        
                                         while($row = mysqli_fetch_assoc($misAlbumes)){//cuando no hay filas devuelve false y termina
                                             echo "<option value='{$row["IdAlbum"]}'>{$row["Titulo"]}</option>";
                                         }

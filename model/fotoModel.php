@@ -7,8 +7,6 @@
     }
     echo "Todo va bien";
 
-    $resultadoFoto = getFoto($id, $idFoto);
-
     function getFoto($id, $idFoto){
         $retorno = mysqli_query($id, 
             "SELECT p.NomPais as Pais, 
@@ -31,10 +29,5 @@
 
         return $retorno;
     }
-    if(mysqli_num_rows($resultadoFoto) == 0){
-        echo "No hay fotos";
-        mysqli_free_result($resultadoFoto);
-        mysqli_close($id);
-        header("Location: ./index.php");
-    }
+    
 ?>

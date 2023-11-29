@@ -5,6 +5,13 @@
         <h1>Detalle</h1>
         <article class="detalle">
             <?php
+            $resultadoFoto = getFoto($id, $idFoto);
+            if(mysqli_num_rows($resultadoFoto) == 0){
+                echo "No hay fotos";
+                mysqli_free_result($resultadoFoto);
+                mysqli_close($id);
+                header("Location: ./index.php");
+            }
             while($row = mysqli_fetch_assoc($resultadoFoto)){//cuando no hay filas devuelve false y termina
                 echo <<<hereDOC
                 <h2>{$row["TituloFoto"]}</h2>

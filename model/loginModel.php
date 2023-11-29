@@ -15,7 +15,7 @@
     function login($id, $nombre, $pwdHash){
         $resultado = mysqli_query($id, 
             "SELECT IdUsuario, NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, e.Nombre as Estilo, e.Descripcion as Descripcion, e.Fichero as Fichero, UltimaConexion
-            FROM usuarios, estilo e
+            FROM usuarios, estilos e
             WHERE usuarios.Estilo = e.IdEstilo
             AND NomUsuario = '$nombre' 
             AND Clave = '$pwdHash'");
@@ -39,7 +39,7 @@
         $ciudad = $fila['Ciudad'];
         $pais = $fila['Pais'];
         $foto = $fila['Foto'];
-        $fecha = $fila['FRegistro'];
+        $fechaRegistro = $fila['FRegistro'];
         $estilo = $fila['Estilo'];
         $ultima = $fila['UltimaConexion'];
         $descripcion = $fila['Descripcion'];
@@ -65,7 +65,7 @@
 
             setcookie(
                  "pwd",
-                 $pwdHash,
+                 $pwd, //recordar poner pwdhash
                  $expira,
                  '/'
             );
@@ -96,17 +96,24 @@
                  '/'
             );
         }
-        session_start();
+        //session_start();
         $_SESSION['IdUsuario'] = $idUsuario;
         $_SESSION['usuario'] = $nombre;
         $_SESSION['pwd'] = $pwdHash;
+        $_SESSION['email'] = $email;
+        $_SESSION['sexo'] = $sexo;
+        $_SESSION['FNacimiento'] = $fecha;
+        $_SESSION['ciudad'] = $ciudad;
+        $_SESSION['pais'] = $pais;
+        $_SESSION['foto'] = $foto;
+        $_SESSION['FRegistro'] = $fechaRegistro;
         $_SESSION['estilo'] = $estilo;
         $_SESSION['descripcion'] = $descripcion;
         $_SESSION['fichero'] = $fichero;
 
+
         mysqli_free_result($resultado);
         mysqli_close($id);
-        header("Location: ./../usuario.php");
     }else{
         mysqli_free_result($resultado);
         mysqli_close($id);

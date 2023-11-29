@@ -8,28 +8,27 @@
         $descripcion =  $_COOKIE['descripcion'];
         $fichero =  $_COOKIE['fichero'];
         $idUsuario =  $_COOKIE['IdUsuario'];
+        // echo <<<hereDOC
+        //     <p>nombre: $nombre</p>
+        //     <p>pwd: $pwd</p>
+        //     <p>estilo: $estilo</p>
+        //     <p>descripcion: $descripcion</p>
+        //     <p>fichero: $fichero</p>
+        //     <p>idUsuario: $idUsuario</p>
+        // hereDOC;
 
-        if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
-            // Ya estas iniciado y te recordamos
-        }
-        else{
-            //te recordamos pero no estas iniciado 
-            
-            $_SESSION['usuario'] = $nombre;
-            $_SESSION['pwd'] = $pwd;
-            $_SESSION['estilo'] = $estilo;
-            $_SESSION['descripcion'] = $descripcion;
-            $_SESSION['fichero'] = $fichero;
-            $_SESSION['IdUsuario'] = $idUsuario;
+        //te recordamos pero no estas iniciado en la sesión
+        if(!(isset($_SESSION['usuario']) && isset($_SESSION['pwd']))){
+
+            include './model/loginModel.php';
 
             $fecha = $_COOKIE['ultima'];
                 setcookie('ultima', time(), time()+ 90 * 24 * 60 *  60, '/');
             echo '<script>';
-            echo 'regreso("' . $nombre . '", "' . date('Y-m-d', $fecha) . '", "' . date('H:i', $fecha) . '", "' . "buscar" . '");';
+            echo 'regreso("' . $nombre . '", "' . date('Y-m-d', $fecha) . '", "' . date('H:i', $fecha) . '", "' . "index" . '");';
             echo '</script>';
 
             $_COOKIE['ultima'] = time();
-        // header("Location: ./usuario.php?$nombre"); 
         }
     }
     else if(isset($_SESSION['usuario']) && isset($_SESSION['pwd'])){
