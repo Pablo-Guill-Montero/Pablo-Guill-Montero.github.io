@@ -7,7 +7,7 @@
     }
     echo "Todo va bien";
 
-    $resultado = getPaises($id);
+    //$resultado = getPaises($id);
 
     function getPaises($id){
         $resultado = mysqli_query($id, 
