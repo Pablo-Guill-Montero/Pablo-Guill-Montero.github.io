@@ -21,4 +21,18 @@
         return $retorno;
     }
 
+    function getAlbum($id, $idAlbum){
+        $retorno = mysqli_query($id, 
+            "SELECT *
+            from albumes
+            where IdAlbum = $idAlbum");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+        echo "Todo va bien";
+
+        return $retorno;
+    }
+
 ?>

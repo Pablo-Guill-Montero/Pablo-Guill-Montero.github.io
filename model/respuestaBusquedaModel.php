@@ -7,22 +7,7 @@
     }
     echo "Todo va bien";
 
-    $tituloFoto = $fecha = $pais = $usuario = $album = ""; 
-    $cantidad = 5; 
-    if(isset($_GET['Titulo']))
-        $tituloFoto = $_GET['Titulo'];
-    if(isset($_GET['Fecha']))
-        $fecha = $_GET['Fecha'];
-    if(isset($_GET['Pais']))
-        $pais = $_GET['Pais'];
-    if(isset($_GET['Usuario']))
-        $usuario = $_GET['Usuario'];
-    if(isset($_GET['Album']))
-        $album = $_GET['Album'];
-    if(isset($_GET['Cantidad']))
-        $cantidad = $_GET['Cantidad'];
-
-    $res_busq = buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad);
+    //$res_busq = buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad);
 
     function buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad){
         $tituloFoto = strtolower($tituloFoto);

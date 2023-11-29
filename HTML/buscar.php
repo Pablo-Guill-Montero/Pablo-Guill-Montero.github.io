@@ -55,6 +55,21 @@
         <section class="articulos">
             <h2>Fotos:</h2>
             <?php
+            $tituloFoto = $fecha = $pais = $usuario = $album = ""; 
+            $cantidad = 5; 
+            if(isset($_GET['Titulo']))
+                $tituloFoto = $_GET['Titulo'];
+            if(isset($_GET['Fecha']))
+                $fecha = $_GET['Fecha'];
+            if(isset($_GET['Pais']))
+                $pais = $_GET['Pais'];
+            if(isset($_GET['Usuario']))
+                $usuario = $_GET['Usuario'];
+            if(isset($_GET['Album']))
+                $album = $_GET['Album'];
+            if(isset($_GET['Cantidad']))
+                $cantidad = $_GET['Cantidad'];
+            
             if ($tituloFoto!="")
                 echo "<p>Título buscado: $tituloFoto<p>";
             if ($fecha!="")
@@ -70,6 +85,7 @@
             ?>
             <div>
                 <?php
+                    $res_busq = buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad);
                     while($row = mysqli_fetch_assoc($res_busq)){//cuando no hay filas devuelve false y termina
                         echo <<< hereDOC
                             <article class="articulo">
