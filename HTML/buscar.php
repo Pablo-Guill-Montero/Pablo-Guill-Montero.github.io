@@ -22,6 +22,7 @@
                         <span>PAIS</span>
                         <span>
                             <select name="Pais" id="Pais">
+                                <option value="">Todos los paises</option>
                                 <?php
                                     while($row = mysqli_fetch_assoc($resultado)){//cuando no hay filas devuelve false y termina
                                         echo "<option value='{$row["NomPais"]}'>{$row["NomPais"]}</option>";

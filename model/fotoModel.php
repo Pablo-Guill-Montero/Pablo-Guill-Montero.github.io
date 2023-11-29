@@ -7,11 +7,17 @@
     }
     echo "Todo va bien";
 
-    $resultado = getFoto($id, $idFoto);
+    $resultadoFoto = getFoto($id, $idFoto);
 
     function getFoto($id, $idFoto){
-        $resultado = mysqli_query($id, 
-            "SELECT p.NomPais as Pais, f.Titulo, f.Descripcion, DATE_FORMAT(f.Fecha, '%e/%c/%Y') as Fecha, f.Pais as idPais, Album, Fichero, Alternativo, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as Fregistro, a.Titulo, u.NomUsuario, a.Usuario 
+        $retorno = mysqli_query($id, 
+            "SELECT p.NomPais as Pais, 
+                f.Titulo as TituloFoto, f.Descripcion as Descripcion, 
+                DATE_FORMAT(f.Fecha, '%e/%c/%Y') as Fecha, 
+                f.Pais as idPais, Album, 
+                Fichero, Alternativo, 
+                DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, 
+                a.Titulo as TituloAlbum, NomUsuario, Usuario 
             FROM fotos f, album a, usuarios u, paises p
             WHERE IdFoto = $idFoto 
             AND f.Pais = p.IdPais
@@ -23,7 +29,12 @@
         }
         echo "Todo va bien";
 
-        return $resultado;
+        return $retorno;
     }
-    
+    if(mysqli_num_rows($resultadoFoto) == 0){
+        echo "No hay fotos";
+        mysqli_free_result($resultadoFoto);
+        mysqli_close($id);
+        header("Location: ./index.php");
+    }
 ?>

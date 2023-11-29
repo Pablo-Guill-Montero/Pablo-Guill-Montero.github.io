@@ -5,20 +5,26 @@
         <h1>Detalle</h1>
         <article class="detalle">
             <?php
+            while($row = mysqli_fetch_assoc($resultadoFoto)){//cuando no hay filas devuelve false y termina
                 echo <<<hereDOC
-                <h2>$tituloFoto</h2>
-                <img src="imgenes/$fichero" alt="$alternativo">
+                <h2>{$row["TituloFoto"]}</h2>
+                <img src="./imgenes/{$row["Fichero"]}" alt="{$row["Alternativo"]}">
                 <p>
-                    <time datetime="$fechaRegistro">$fechaRegistro</time>
-                    <span>$pais</span>
-                    <span><a href="album.php?id=album">$tituloAlbum</a></span>
-                    <a href="usuario.php?id=$idUsuario">$usuario</a>
+                    <time datetime="{$row["FRegistro"]}">{$row["FRegistro"]}</time>
+                    <span>{$row["Pais"]}</span>
+                    <span><a href="album.php?id={$row["Album"]}">{$row["TituloAlbum"]}</a></span>
+                    <a href="usuario.php?id={$row["Usuario"]}">{$row["NomUsuario"]}</a>
                 </p> 
                 <p>Fecha de la foto:
-                    <time datetime="$fecha">$fecha</time>
+                    <time datetime="{$row["Fecha"]}">{$row["Fecha"]}</time>
                 </p>
-                <p>Descripción: $descripcion</p>
+                <p>Descripción: {$row["Descripcion"]}</p>
                 hereDOC;
+            }
+
+            mysqli_free_result($resultadoFoto);
+            mysqli_close($id);
+                
             ?>
             
              
