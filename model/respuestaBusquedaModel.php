@@ -33,7 +33,7 @@
     
         $resultado = mysqli_query($id, 
             "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo
-            FROM fotos f, usuarios , album a, paises
+            FROM fotos f, usuarios , albumes a, paises
             WHERE Usuario = IdUsuario
             AND Album = IdAlbum
             AND f.Pais = IdPais

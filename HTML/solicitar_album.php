@@ -4,7 +4,6 @@
     <main>
         <h1>Solicitar impresión del álbum</h1>
         <p>Mediante esta opción puedes solicitar la impresión y envio de uno de tus álbumes a todo color, toda resolución.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia nam modi voluptatibus odio distinctio nulla ex aliquam sit provident, cumque autem quod veniam amet dolor adipisci deserunt</p>
         <section id="tablas">
             <h2>Tarifas</h2>
             <table>
@@ -123,9 +122,13 @@
                             <span>Álbum de PI</span>
                             <span>
                                 <select name="album" id="album">
-                                    <option value="1">Álbum1</option>
-                                    <option value="2">Álbum2</option>
-                                    <option value="3">Álbum3</option>
+                                    <?php
+                                        while($row = mysqli_fetch_assoc($misAlbumes)){//cuando no hay filas devuelve false y termina
+                                            echo "<option value='{$row["IdAlbum"]}'>{$row["Titulo"]}</option>";
+                                        }
+                                        mysqli_free_result($misAlbumes);
+                                        mysqli_close($id);
+                                    ?>                                
                                 </select>
                             </span>
                         </label>

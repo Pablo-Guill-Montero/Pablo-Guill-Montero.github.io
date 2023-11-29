@@ -18,7 +18,7 @@
                 Fichero, Alternativo, 
                 DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, 
                 a.Titulo as TituloAlbum, NomUsuario, Usuario 
-            FROM fotos f, album a, usuarios u, paises p
+            FROM fotos f, albumes a, usuarios u, paises p
             WHERE IdFoto = $idFoto 
             AND f.Pais = p.IdPais
             AND f.Album = a.IdAlbum 
