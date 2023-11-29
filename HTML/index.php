@@ -7,6 +7,7 @@
             <h2>Fotos recientes</h2>
             <div>
                 <?php
+                    include './model/respuestaBusquedaModel.php';
                     $res_busq = buscar($id, "", "", "", "", "", 5);
                     while($row = mysqli_fetch_assoc($res_busq)){//cuando no hay filas devuelve false y termina
                         echo <<< hereDOC

@@ -24,6 +24,7 @@
                             <select name="Pais" id="Pais">
                                 <option value="">Todos los paises</option>
                                 <?php
+                                    include './model/paisesModel.php';
                                     $resultado = getPaises($id);
                                     while($row = mysqli_fetch_assoc($resultado)){//cuando no hay filas devuelve false y termina
                                         echo "<option value='{$row["NomPais"]}'>{$row["NomPais"]}</option>";
@@ -69,7 +70,7 @@
                 $album = $_GET['Album'];
             if(isset($_GET['Cantidad']))
                 $cantidad = $_GET['Cantidad'];
-            
+
             if ($tituloFoto!="")
                 echo "<p>Título buscado: $tituloFoto<p>";
             if ($fecha!="")
@@ -85,6 +86,7 @@
             ?>
             <div>
                 <?php
+                    include './model/respuestaBusquedaModel.php';
                     $res_busq = buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad);
                     while($row = mysqli_fetch_assoc($res_busq)){//cuando no hay filas devuelve false y termina
                         echo <<< hereDOC

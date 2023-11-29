@@ -96,7 +96,8 @@
                  '/'
             );
         }
-        //session_start();
+        if(!isset($_SESSION))
+            session_start();
         $_SESSION['IdUsuario'] = $idUsuario;
         $_SESSION['usuario'] = $nombre;
         $_SESSION['pwd'] = $pwdHash;
