@@ -50,7 +50,7 @@
             FROM fotos, albumes
             WHERE Album = IdAlbum
             AND IdAlbum = $idAlbum";
-        echo $query;
+        //echo $query;
         $resultado = mysqli_query($id, $query);
         if(mysqli_connect_errno() != 0){
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador

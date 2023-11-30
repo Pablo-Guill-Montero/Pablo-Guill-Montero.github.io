@@ -318,6 +318,22 @@ textarea{
 #fotoInput{
     display: none;
 }
+#btnNewImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 2.5em; */
+}
+    #btnNewImg > a{
+        padding: .5em;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--claro);
+        border-radius: 20px;
+        height: 100%;
+    }
 /* ---------------------------------------------------------------------------------------------------------------------  */
 
 /* -------------- MEDIAQUERIES --------------------------------------------------------------------------------------------- */

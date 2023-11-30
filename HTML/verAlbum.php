@@ -13,6 +13,7 @@
 
 
         while($row = mysqli_fetch_assoc($resultadoAlbum)){//cuando no hay filas devuelve false y termina
+            $idUsuario = $row['Usuario'];
             echo <<<hereDOC
                 <h1>Ver Album: {$row["Titulo"]}</h1>
                 <p>Descripción: {$row["Descripcion"]}</p>
@@ -66,7 +67,18 @@
                     <p>Desde {$row2["FechaMinima"]} hasta {$row2["FechaMaxima"]}</p>
                 hereDOC;
             }
+            if($_SESSION){
+                //Si el usuario que entra es el mismo que el que ha creado el album
+                if($idUsuario==$_SESSION['IdUsuario']){
+                    echo "<div id='btnNewImg'>
+                            <a class='icon-nuevaImagen' href='./nueva_imagen.php?id={$idAlbum}'>
+                                <span>AÑADIR IMAGEN</span>
+                            </a>
+                        </div>";
+                }
+            }
         }
+        
         mysqli_free_result($resultadoAlbum);
         mysqli_close($id);
         ?>
