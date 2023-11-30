@@ -61,7 +61,7 @@
                 </ul>
                 <p>Intervalo de fechas: </p>
             hereDOC;
-            while($row2 = mysqli_fetch_assoc($resultadoFotos)){//cuando no hay filas devuelve false y termina
+            while($row2 = mysqli_fetch_assoc($intervalo)){//cuando no hay filas devuelve false y termina
                 echo <<<hereDOC
                     <p>Desde {$row2["FechaMinima"]} hasta {$row2["FechaMaxima"]}</p>
                 hereDOC;

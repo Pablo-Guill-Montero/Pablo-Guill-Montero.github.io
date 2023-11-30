@@ -16,6 +16,7 @@
         $usuario = strtolower($usuario);
         $album = strtolower($album);
     
+        //Está filtrando por la fecha de registro, no la de la toma de la foto
         $query = "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo, IdUsuario, IdAlbum
             FROM fotos f, usuarios , albumes a, paises
             WHERE Usuario = IdUsuario
@@ -23,7 +24,7 @@
             AND f.Pais = IdPais
             AND LOWER(NomUsuario) LIKE '%$usuario%'
             AND LOWER(f.Titulo) LIKE '%$tituloFoto%'
-            AND Fecha LIKE '%$fecha%'
+            AND f.FRegistro LIKE '%$fecha%'
             AND LOWER(NomPais) LIKE '%$pais%'
             AND LOWER(a.Titulo) LIKE '%$album%'
             ORDER BY f.FRegistro DESC";
@@ -44,12 +45,12 @@
     }
 
     function getIntervalo($id, $idAlbum){
-
-        $query = "SELECT MIN(Fecha) as FechaMinima, MAX(Fecha) as FechaMaxima
+        //Está comparando las fechas de registro de las fotos, no las de las fotos en sí
+        $query = "SELECT MIN(DATE_FORMAT(FRegistro, '%e/%c/%Y')) as FechaMinima, MAX(DATE_FORMAT(FRegistro, '%e/%c/%Y')) as FechaMaxima
             FROM fotos, albumes
             WHERE Album = IdAlbum
             AND IdAlbum = $idAlbum";
-
+        echo $query;
         $resultado = mysqli_query($id, $query);
         if(mysqli_connect_errno() != 0){
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador

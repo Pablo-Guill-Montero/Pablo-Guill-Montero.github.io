@@ -17,7 +17,8 @@
             echo <<<hereDOC
                 <h1>Perfil de {$row["NomUsuario"]}</h1>
                 <p>Nombre: {$row["NomUsuario"]}</p>
-                <p>Foto: {$row["NomUsuario"]}</p>
+                <p>Foto:</p>
+                <img class="fotoPerfil" src="./imgenes/{$row["Foto"]}" alt="Foto de {$row["NomUsuario"]}"><img>      </article>
                 <p>Fecha de registro: {$row["FRegistro"]}</p>
                 <p>Álbumes: 
                     <ul>

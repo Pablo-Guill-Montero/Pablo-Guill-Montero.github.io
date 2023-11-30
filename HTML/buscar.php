@@ -49,6 +49,12 @@
                     </label>
                 </p>
                 <p>
+                    <label for="Cantidad">
+                        <span>CANTIDAD</span>
+                        <span><input type="text" name="Cantidad" id="Cantidad" ></span>
+                    </label>
+                </p>
+                <p>
                     <input type="submit" value="Buscar">
                 </p>
             </div>
@@ -68,7 +74,7 @@
                 $usuario = $_GET['Usuario'];
             if(isset($_GET['Album']))
                 $album = $_GET['Album'];
-            if(isset($_GET['Cantidad']))
+            if(isset($_GET['Cantidad']) && is_numeric($_GET['Cantidad']))
                 $cantidad = $_GET['Cantidad'];
 
             if ($tituloFoto!="")
