@@ -5,7 +5,7 @@
         echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
         exit;
     }
-    echo "Todo va bien";
+    //echo "Todo va bien";
 
     //$res_busq = buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad);
 
@@ -17,7 +17,7 @@
         $album = strtolower($album);
     
         //Está filtrando por la fecha de registro, no la de la toma de la foto
-        $query = "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo, IdUsuario, IdAlbum
+        $query = "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo, IdUsuario, IdAlbum, f.Descripcion as Descripcion
             FROM fotos f, usuarios , albumes a, paises
             WHERE Usuario = IdUsuario
             AND Album = IdAlbum
@@ -39,7 +39,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $resultado;
     }
@@ -56,7 +56,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $resultado;
     }

@@ -71,7 +71,7 @@
                 //Si el usuario que entra es el mismo que el que ha creado el album
                 if($idUsuario==$_SESSION['IdUsuario']){
                     echo "<div id='btnNewImg'>
-                            <a class='icon-nuevaImagen' href='./nueva_imagen.php?id={$idAlbum}'>
+                            <a class='icon-nuevaImagen' href='./anadir_foto_album.php?id={$idAlbum}'>
                                 <span>AÑADIR IMAGEN</span>
                             </a>
                         </div>";

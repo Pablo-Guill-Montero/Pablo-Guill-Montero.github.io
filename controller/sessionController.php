@@ -58,7 +58,7 @@
             // Usuario
         //Redirigir a aviso.php en:
             // Detatalle
-        if ($titulo == "Ver Album-GameScape" || $titulo=="Nuevo álbum-GameScape" || $titulo=="Solicitar álbum-GameScape" || $titulo=="Solicitar álbum respuesta-GameScape" || $titulo=="Usuario-GameScape")
+        if ($titulo=="Nuevo álbum-GameScape" || $titulo=="Solicitar álbum-GameScape" || $titulo=="Solicitar álbum respuesta-GameScape" || $titulo=="Usuario-GameScape")
             header("Location: ./index.php");
         else if($titulo=="Detalle-GameScape")
             header("Location: ./aviso.php");

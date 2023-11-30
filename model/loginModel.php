@@ -5,7 +5,7 @@
         echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
         exit;
     }
-    echo "Todo va bien";
+    //echo "Todo va bien";
 
     $pwdHash =hash('sha256', $pwd);
     //PARA PRUEBAS SIN EL HASH - RECORDAR CAMBIARLO
@@ -23,7 +23,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $resultado;
     }

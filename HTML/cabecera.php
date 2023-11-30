@@ -46,6 +46,8 @@
             echo '<script src="./JS/fotos.js"></script>';
         if ($titulo == "Registro-GameScape")
             echo '<script src="./JS/fotos.js"></script>';
+        if ($titulo == "Añadir_Foto_a_Album-GameScape")
+            echo '<script src="./JS/fotos.js"></script>';
     ?>  
     
 </head>

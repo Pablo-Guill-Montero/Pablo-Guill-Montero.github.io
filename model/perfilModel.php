@@ -5,7 +5,7 @@
         echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
         exit;
     }
-    echo "Todo va bien";
+    //echo "Todo va bien";
 
     function getPerfil($id, $idPerfil){
         $retorno = mysqli_query($id, 
@@ -16,7 +16,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $retorno;
     }

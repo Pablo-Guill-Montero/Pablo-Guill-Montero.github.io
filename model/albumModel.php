@@ -5,7 +5,7 @@
         echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
         exit;
     }
-    echo "Todo va bien";
+    //echo "Todo va bien";
 
     function getAlbumes($id, $idUsuario){
         $retorno = mysqli_query($id, 
@@ -16,7 +16,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $retorno;
     }
@@ -31,7 +31,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $retorno;
     }

@@ -5,7 +5,7 @@
         echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
         exit;
     }
-    echo "Todo va bien";
+    //echo "Todo va bien";
 
     //$resultado = getPaises($id);
 
@@ -17,7 +17,7 @@
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
         }
-        echo "Todo va bien";
+        //echo "Todo va bien";
 
         return $resultado;
     }

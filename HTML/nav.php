@@ -16,7 +16,7 @@
                     if (isset($_SESSION["usuario"])){
                         $usu = $_SESSION["usuario"];
                         echo <<<hereDOC
-                            <li><a class="icon-nuevaImagen" href="./nueva_imagen.php"><span>NUEVA IMAGEN</span></a></li>
+                            <li><a class="icon-nuevaImagen" href="./anadir_foto_album.php"><span>NUEVA IMAGEN</span></a></li>
                             <li><a class="icon-nuevoAlbum" href="./nuevo_album.php"><span>NUEVO ÁLBUM</span></a></li>
                             <li><a class="icon-editarPerfil" href="./usuario.php"><span>$usu</span></a></li>
                             <li><a class="icon-login" id="logout" href="./logout.php"><span>SALIR</span></a></li>
