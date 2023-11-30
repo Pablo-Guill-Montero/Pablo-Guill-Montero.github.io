@@ -27,7 +27,7 @@
             }else{
                 while($row2 = mysqli_fetch_assoc($albumes)){
                     echo <<<hereDOC
-                        <li><a href="album.php?id={$row2["IdAlbum"]}">{$row2["Titulo"]}</a></li>
+                        <li><a href="verAlbum.php?id={$row2["IdAlbum"]}">{$row2["Titulo"]}</a></li>
                     hereDOC;
                 }
             }

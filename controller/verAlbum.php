@@ -1,5 +1,8 @@
 <?php 
     $titulo = "Ver Album-GameScape";
+    if (isset($_SESSION["usuario"]))
+        $archivo = "detalle.php";
+    else $archivo = "aviso.php";
     if(isset($_GET["id"])) {
         if(is_numeric($_GET["id"])){
             $idAlbum = $_GET["id"];

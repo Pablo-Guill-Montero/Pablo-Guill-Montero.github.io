@@ -22,4 +22,34 @@
         return $resultado;
     }
     
+    //$resultadoFoto = getPais($id, $idFoto);
+
+    function getPais($id, $idPais){
+        if(empty($idPais) || !is_numeric($idPais)){
+            $retorno = mysqli_query($id, 
+            "SELECT p.NomPais as Pais 
+            FROM paises p
+            WHERE IdPais = 1 ");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+
+        return $retorno;
+        }
+        else{
+        $retorno = mysqli_query($id, 
+            "SELECT p.NomPais as Pais 
+            FROM paises p
+            WHERE IdPais = $idPais ");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+
+
+        return $retorno;
+        }
+    }
+    
 ?>

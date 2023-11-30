@@ -23,9 +23,10 @@
 
     function getAlbum($id, $idAlbum){
         $retorno = mysqli_query($id, 
-            "SELECT *
-            from albumes
-            where IdAlbum = $idAlbum");
+            "SELECT IdAlbum, Titulo, Descripcion, Usuario, NomUsuario
+            from albumes, usuarios
+            where Usuario = IdUsuario
+            AND IdAlbum = $idAlbum");
         if(mysqli_connect_errno() != 0){
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;

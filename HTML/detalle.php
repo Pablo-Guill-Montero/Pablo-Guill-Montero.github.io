@@ -19,7 +19,7 @@
                 <p>
                     <time datetime="{$row["FRegistro"]}">{$row["FRegistro"]}</time>
                     <span>{$row["Pais"]}</span>
-                    <span><a href="album.php?id={$row["Album"]}">{$row["TituloAlbum"]}</a></span>
+                    <span><a href="verAlbum.php?id={$row["Album"]}">{$row["TituloAlbum"]}</a></span>
                     <span name="usuario"><a href="./perfil.php?id={$row["Usuario"]}">{$row["NomUsuario"]}</a></span>
                 </p> 
                 <p>Fecha de la foto:
