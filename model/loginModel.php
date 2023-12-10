@@ -7,7 +7,7 @@
     }
     //echo "Todo va bien";
 
-    $pwdHash =hash('sha256', $pwd);
+    $pwdHash = hash('sha256', $pwd);
     //PARA PRUEBAS SIN EL HASH - RECORDAR CAMBIARLO
     $resultado = login($id, $nombre, $pwd);
 

@@ -15,6 +15,8 @@
             $fic = "colores.css";
             $des = "Estilo estándar";
         }
+        // echo 'Fichero: '.$fic.'<br>';
+        // echo 'Descripción: '.$des.'<br>';
 
     ?>
     <link rel="stylesheet" href="./CSS/<?=$fic;?>" title="<?=$des;?>">
@@ -30,15 +32,6 @@
     <link rel="stylesheet" href="./CSS/css/fontello.css">
     <script src="./JS/login.js"></script>
 
-    
-    <!-- < ?php
-        if ($titulo == "Solicitar_Album-GameScape")
-            echo '<script src="./JS/solicitar_album.js"></script>';
-        else if ($titulo == "Login-GameScape")
-            echo '<script src="./JS/login.js"></script>';
-        else if ($titulo == "Registro-GameScape")
-            echo '<script src="./JS/registro.js"></script>';
-    ? > -->
     <?php
         if ($titulo == "Solicitar_Album-GameScape")
             echo '<script src="./JS/solicitar_album.js"></script>';
@@ -48,6 +41,10 @@
             echo '<script src="./JS/fotos.js"></script>';
         if ($titulo == "Añadir_Foto_a_Album-GameScape")
             echo '<script src="./JS/fotos.js"></script>';
+        if ($titulo == "Usuario-GameScape"){
+            echo '<script src="./JS/usuario.js"></script>';
+            echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
+        }
     ?>  
     
 </head>

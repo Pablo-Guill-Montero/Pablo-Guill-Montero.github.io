@@ -21,7 +21,7 @@
                     $estilos = getEstilos($id);
 
                     while($row = mysqli_fetch_assoc($estilos)){//cuando no hay filas devuelve false y termina
-                        echo  "<li><button onclick='cambiaestilo({$row['IdEstilo']})'>{$row['Nombre']}</button></li>";
+                        echo  "<li><button onclick='cambiarEstilo($idUsuario, {$row['IdEstilo']}, \"{$row['Nombre']}\", \"{$row['Descripcion']}\", \"{$row['Fichero']}\");'>{$row['Nombre']}</button></li>";
                     }
                     mysqli_free_result($estilos);
                     mysqli_close($id);
