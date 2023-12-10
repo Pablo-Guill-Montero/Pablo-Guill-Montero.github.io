@@ -17,6 +17,7 @@
         $album = strtolower($album);
     
         //Está filtrando por la fecha de registro, no la de la toma de la foto
+        //Formato de búsqueda de la fecha 2023-11-28 13:09:39
         $query = "SELECT f.Titulo as Titulo, DATE_FORMAT(Fecha, '%e/%c/%Y') as Fecha, DATE_FORMAT(f.FRegistro, '%e/%c/%Y') as FRegistro, IdFoto, NomUsuario as Usuario, NomPais as Pais, a.Titulo as Album, Fichero, Alternativo, IdUsuario, IdAlbum, f.Descripcion as Descripcion
             FROM fotos f, usuarios , albumes a, paises
             WHERE Usuario = IdUsuario
