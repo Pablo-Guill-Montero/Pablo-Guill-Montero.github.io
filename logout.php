@@ -3,25 +3,23 @@
     session_start();
     session_destroy();
     if(isset($_COOKIE['usuario']) && isset($_COOKIE['pwd']) && isset($_COOKIE['ultima'])){             
-        // Establecer la cookie con la fecha de caducidad en el pasado
+        // Establecer las cookies con la fecha de caducidad en el pasado
+        setcookie('IdUsuario', "", time() - 3600, "/");
         setcookie('usuario', "", time() - 3600, "/");
-        // También puedes unset() la variable de cookie si aún está en uso en el script actual
-        unset($_COOKIE['usuario']);
-
-        // Establecer la cookie con la fecha de caducidad en el pasado
         setcookie('pwd', "", time() - 3600, "/");
-        // También puedes unset() la variable de cookie si aún está en uso en el script actual
-        unset($_COOKIE['pwd']);
-
-        // Establecer la cookie con la fecha de caducidad en el pasado
         setcookie('ultima', "", time() - 3600, "/");
-        // También puedes unset() la variable de cookie si aún está en uso en el script actual
-        unset($_COOKIE['ultima']);
-
-        // Establecer la cookie con la fecha de caducidad en el pasado
         setcookie('estilo', "", time() - 3600, "/");
-        // También puedes unset() la variable de cookie si aún está en uso en el script actual
+        setcookie('descripcion', "", time() - 3600, "/");
+        setcookie('fichero', "", time() - 3600, "/");
+
+        // También puedes unset() las variables de cookie si aún están en uso en el script actual
+        unset($_COOKIE['IdUsuario']);
+        unset($_COOKIE['usuario']);
+        unset($_COOKIE['pwd']);
+        unset($_COOKIE['ultima']);
         unset($_COOKIE['estilo']);
+        unset($_COOKIE['descripcion']);
+        unset($_COOKIE['fichero']);  
     }         
     header("Location: ./index.php");    
 ?>

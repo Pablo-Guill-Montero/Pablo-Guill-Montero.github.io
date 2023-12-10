@@ -1,3 +1,6 @@
+<?php
+    include "./controller/sessionController.php";
+?>
 <main>
     <h1>Mis Fotos</h1>
 <?php

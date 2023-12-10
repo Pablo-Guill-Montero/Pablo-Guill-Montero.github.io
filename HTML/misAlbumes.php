@@ -1,3 +1,6 @@
+<?php
+    include "./controller/sessionController.php";
+?>
 <main>
 <?php
 $contador = 0;

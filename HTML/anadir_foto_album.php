@@ -1,4 +1,7 @@
 <?php
+    include "./controller/sessionController.php";
+?>
+<?php
     $albumActual = -1;
     $nombeAlbum = "";
     if(isset($_GET['id']) && is_numeric($_GET['id'])){

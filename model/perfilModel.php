@@ -20,5 +20,17 @@
 
         return $retorno;
     }
+
+    function deletePerfil($id, $idPerfil){
+        mysqli_query($id, 
+            "DELETE
+            from usuarios
+            where IdUsuario = $idPerfil");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+        //echo "Todo va bien";
+    }
     
 ?>

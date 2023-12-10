@@ -51,16 +51,30 @@
         else if($titulo=="Aviso-GameScape")
             header("Location: ./index.php");
     }else{
-        //Solo redirigir a index.php en:
+        //Solo redirigir a index.php en las privadas:
             // Nuevo álbum
             // Solicitar Album Respuesta
             // Solicitar álbum
             // Usuario
+            // Añadir_Foto_a_Album
+            // Mis_Datos
+            // Baja
+            // Mis_Fotos
+            // Mis_Albumes
         //Redirigir a aviso.php en:
-            // Detatalle
-        if ($titulo=="Nuevo álbum-GameScape" || $titulo=="Solicitar álbum-GameScape" || $titulo=="Solicitar álbum respuesta-GameScape" || $titulo=="Usuario-GameScape")
-            header("Location: ./index.php");
-        else if($titulo=="Detalle-GameScape")
+            // Detalle
+        if($titulo=="Detalle-GameScape")
             header("Location: ./aviso.php");
+        else if ($titulo=="Nuevo álbum-GameScape" 
+        || $titulo=="Solicitar álbum-GameScape" 
+        || $titulo=="Solicitar álbum respuesta-GameScape" 
+        || $titulo=="Usuario-GameScape" 
+        || $titulo=="Añadir_Foto_a_Album-GameScape"
+        || $titulo=="Mis_Datos-GameScape"
+        || $titulo=="Baja-GameScape"
+        || $titulo=="Mis_Fotos-GameScape"
+        || $titulo=="Mis_Albumes-GameScape")
+            header("Location: ./index.php");
+        
     }
 ?>
