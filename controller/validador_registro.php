@@ -64,6 +64,9 @@ function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais) {
         // Aquí deberías manejar el envío del formulario en PHP
         // Puedes redirigir a otra página o realizar otras acciones necesarias
         // Ejemplo: header("Location: formulario_enviado.php");
+
+        // OJO AQUÍ SERÍA UN UPDATE O UN INSERT
+        // LAS REDIRECCIONES DEBERÍAN ESTAR EN EL MODEL
         if(isset($_SESSION["IdUsuario"])){
             header("Location: ./../usuario.php"); 
         }
