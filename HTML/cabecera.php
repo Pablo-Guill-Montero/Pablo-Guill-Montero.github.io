@@ -42,7 +42,6 @@
         if ($titulo == "Añadir_Foto_a_Album-GameScape")
             echo '<script src="./JS/fotos.js"></script>';
         if ($titulo == "Usuario-GameScape"){
-            echo '<script src="./JS/usuario.js"></script>';
             echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
         }
     ?>  

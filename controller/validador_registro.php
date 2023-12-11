@@ -10,12 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha = $_POST["fecha"];
     $ciudad = $_POST["ciudad"];
     $pais = $_POST["Pais"];
+    $foto = $_POST["foto"];
    
 
-    validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais);
+    validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais, $foto);
 }
 
-function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais) {
+function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais, $foto) {
     $dialogo = '';
     $html = '';
 
@@ -67,13 +68,18 @@ function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais) {
 
         // OJO AQUÍ SERÍA UN UPDATE O UN INSERT
         // LAS REDIRECCIONES DEBERÍAN ESTAR EN EL MODEL
+        include "./../model/usuarioModel.php";
         if(isset($_SESSION["IdUsuario"])){
-            header("Location: ./../usuario.php"); 
+            updateUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto);
+
+            
         }
         else{
-            header("Location: ./../nuevo_usuario.php?nombre=$nombre&pwd=$pwd&pwd2=$pwd2&email=$email&sexo=$sexo&fecha=$fecha&ciudad=$ciudad&pais=$pais");
+            
+            postUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto);
+
+            
         }
-        
     }
 
     if ($dialogo != '') {

@@ -1,5 +1,6 @@
 <?php
     include "./controller/sessionController.php";
+
 ?>
     <main>
         <h1>Solicitar impresión del álbum</h1>

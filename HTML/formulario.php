@@ -1,5 +1,5 @@
 <?php
-    if($pais == ""){
+    if(!isset($pais) || $pais == ""){
         $pais == 1;
     }
 

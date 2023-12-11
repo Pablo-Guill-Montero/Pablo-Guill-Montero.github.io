@@ -1,5 +1,9 @@
 <?php
     include "./controller/sessionController.php";
+    include './model/solucitudAlbumModel.php';
+    $real = floatval($total);
+    postSolicitud($id, $album, $nombre, $tituloAlbum, $descripcion, $email, $direccion, $color, $cantidad, $resolucion, $fecha, $col_impre, $fecha, $real )  
+
 ?>
     <main>
        <h1>Solicitar álbum respuesta</h1>
@@ -30,7 +34,7 @@
                     </label>
                 </p>
                 <p id="coste">Precio unitario: <?=$coste?></p>
-                <p id="coste">El coste de impresión total es: <?=$total?></p>
+                <p id="coste">El coste de impresión total es: <?=$total?>€</p>
             </div>
         
        </section>  

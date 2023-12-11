@@ -58,6 +58,6 @@
 
     $coste = number_format($tarifa, 2) . "€";
     
-    $total = number_format($tarifa * $cantidad, 2) . "€";
+    $total = number_format($tarifa * $cantidad, 2) ;
 
 ?>
