@@ -1,14 +1,21 @@
 <?php
     include "./controller/sessionController.php";
+
+    if(isset($_GET['modo'])){
+        $modo = $_GET['modo'];
+        if($modo == 1){
+            echo "<p>El título no puede estar vacío.</p>";
+        }
+    }
 ?>
 <main>
     <h1>Nuevo álbum</h1>
-    <form action="#" id="formulario">
+    <form method="POST" action="./controller/validador_album.php" id="formulario">
         <div>
             <p>
                 <label for="titulo">
                     <span>TÍTULO: </span>
-                    <span><input type="text" name="titulo" id="titulo" required></span>
+                    <span><input type="text" name="titulo" id="titulo"></span>
                 </label>
             </p>
             <P>
@@ -18,7 +25,7 @@
                 </label>
             </p>
             <p>
-                <input type="button" value="Crear" id="boton">
+                <input type="submit" value="Crear" id="boton">
             </p>
         </div>
     </form>

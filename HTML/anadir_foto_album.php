@@ -21,10 +21,20 @@
         $nombeAlbum = $fila['Titulo'];
         mysqli_free_result($prueba);
     }
+    if(isset($_GET['modo'])){
+        $modo = $_GET['modo'];
+        if($modo == 1){
+            echo "<p>El título y el alternativo no pueden estar vacíos.</p>";
+            echo "<p>El alternativo debe tener al menos 10 caracteres.</p>";
+        }
+        else if($modo == 2){
+            echo "<p>El alternativo no puede empezar por 'foto' o 'imagen'</p>";
+        }
+    }
 
 ?>
 <main>
-    <form>
+    <form method="POST" action="./controller/validador_foto.php" id="formulario">
         <div>
             <p>
                 <label for="titulo">
@@ -48,7 +58,7 @@
                 <label for="pais">
                     <span>PAÍS</span>
                     <span>
-                        <select name="Pais" id="Pais" >
+                        <select name="pais" id="pais" >
                             <?php
                                 $resultado = getPaises($id);
                                 while($row = mysqli_fetch_assoc($resultado)){//cuando no hay filas devuelve false y termina
@@ -99,7 +109,7 @@
                     <span><input type="text" name="alternativo" id="alternativo" ></span>
                 </label>
             </p>
-            <input type="button" value="SUBIR">
+            <input type="submit" value="SUBIR">
         </div>
     </form>
 </main>

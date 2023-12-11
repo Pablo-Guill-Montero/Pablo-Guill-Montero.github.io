@@ -19,6 +19,19 @@
         return $retorno;
     }
 
+    function getEstilo($id, $idEstilo){
+        $retorno = mysqli_query($id, 
+            "SELECT *
+            from estilos
+            where IdEstilo = $idEstilo");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+        //echo "Todo va bien";
+        return $retorno;
+    }
+
     function putEstiloUsuario($id, $idUsuario, $idEstilo, $nombre, $descripcion, $ficheroEstilo){
         mysqli_query($id, 
         "UPDATE `usuarios` 
@@ -67,12 +80,17 @@
     }
 
 
-    if (isset($_POST['idUsuario']) && isset($_POST['idEstilo']) && isset($_POST['nombreEstilo']) && isset($_POST['descripcionEstilo']) && isset($_POST['ficheroEstilo'])) {
-        $idUsuario = $_POST['idUsuario'];
-        $idEstilo = $_POST['idEstilo'];
-        $nombreEstilo = $_POST['nombreEstilo'];
-        $descripcionEstilo = $_POST['descripcionEstilo'];
-        $ficheroEstilo = $_POST['ficheroEstilo'];
+    if (isset($_POST['estilo'])) {
+        if(!isset($_SESSION))
+            session_start();
+        $idUsuario = $_SESSION['IdUsuario'];
+        $idEstilo = $_POST['estilo'];
+        $estilo = getEstilo($id, $idEstilo);
+        $fila = mysqli_fetch_assoc($estilo);
+        $nombreEstilo = $fila["Nombre"];
+        $descripcionEstilo = $fila["Descripcion"];
+        $ficheroEstilo = $fila["Fichero"];
+        mysqli_free_result($estilo);
 
         cambiarEstilo($idUsuario, $idEstilo, $nombreEstilo, $descripcionEstilo, $ficheroEstilo);
     }

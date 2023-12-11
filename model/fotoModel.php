@@ -29,5 +29,20 @@
 
         return $retorno;
     }
-    
+
+    function postFoto($id, $titulo, $descripcion, $fecha, $pais, $idAlbum, $fichero, $alternativo){
+        mysqli_query($id, 
+            "INSERT INTO fotos (IdFoto, Titulo, Descripcion, Fecha, Pais, Album, Fichero, Alternativo, FRegistro)
+            VALUES (NULL, '$titulo', '$descripcion', '$fecha', $pais, $idAlbum, '$fichero', '$alternativo', NOW())");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+        //echo "Todo va bien";
+
+        // Obtener el ID del nuevo álbum insertado
+        $newFoto = mysqli_insert_id($id);
+        mysqli_close($id);
+        header("Location: ./../detalle.php?id=$newFoto");
+    }
 ?>

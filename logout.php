@@ -11,6 +11,7 @@
         setcookie('estilo', "", time() - 3600, "/");
         setcookie('descripcion', "", time() - 3600, "/");
         setcookie('fichero', "", time() - 3600, "/");
+        setcookie('idEstilo', "", time() - 3600, "/");
 
         // También puedes unset() las variables de cookie si aún están en uso en el script actual
         unset($_COOKIE['IdUsuario']);
@@ -19,7 +20,8 @@
         unset($_COOKIE['ultima']);
         unset($_COOKIE['estilo']);
         unset($_COOKIE['descripcion']);
-        unset($_COOKIE['fichero']);  
+        unset($_COOKIE['fichero']); 
+        unset($_COOKIE['idEstilo']); 
     }         
     header("Location: ./index.php");    
 ?>

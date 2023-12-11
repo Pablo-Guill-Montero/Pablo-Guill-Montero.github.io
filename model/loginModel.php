@@ -14,7 +14,7 @@
     //Recogemos la información del estilo aquí también para ahorrar consultas
     function login($id, $nombre, $pwdHash){
         $resultado = mysqli_query($id, 
-            "SELECT IdUsuario, NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, e.Nombre as Estilo, e.Descripcion as Descripcion, e.Fichero as Fichero, UltimaConexion
+            "SELECT IdUsuario, NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, e.Nombre as Estilo, e.Descripcion as Descripcion, e.Fichero as Fichero, UltimaConexion, IdEstilo
             FROM usuarios, estilos e
             WHERE usuarios.Estilo = e.IdEstilo
             AND NomUsuario = '$nombre' 
@@ -40,6 +40,7 @@
         $pais = $fila['Pais'];
         $foto = $fila['Foto'];
         $fechaRegistro = $fila['FRegistro'];
+        $idEstilo = $fila['IdEstilo'];
         $estilo = $fila['Estilo'];
         $ultima = $fila['UltimaConexion'];
         $descripcion = $fila['Descripcion'];
@@ -78,6 +79,13 @@
             );
 
             setcookie(
+                "idEstilo",
+                $idEstilo,
+                $expira,
+                 '/'
+            );
+
+            setcookie(
                 "estilo",
                 $estilo,
                 $expira,
@@ -108,13 +116,14 @@
         $_SESSION['pais'] = $pais;
         $_SESSION['foto'] = $foto;
         $_SESSION['FRegistro'] = $fechaRegistro;
+        $_SESSION['idEstilo'] = $idEstilo;
         $_SESSION['estilo'] = $estilo;
         $_SESSION['descripcion'] = $descripcion;
         $_SESSION['fichero'] = $fichero;
 
-
         mysqli_free_result($resultado);
         mysqli_close($id);
+        header("Location: ./../usuario.php");
     }else{
         mysqli_free_result($resultado);
         mysqli_close($id);

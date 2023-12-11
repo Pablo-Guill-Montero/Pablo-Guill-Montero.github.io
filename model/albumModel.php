@@ -36,4 +36,20 @@
         return $retorno;
     }
 
+    function postAlbum($id, $titulo, $descripcion, $idUsuario){
+        mysqli_query($id, 
+            "INSERT INTO albumes (Titulo, Descripcion, Usuario)
+            VALUES ('$titulo', '$descripcion', $idUsuario)");
+        if(mysqli_connect_errno() != 0){
+            echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
+            exit;
+        }
+        //echo "Todo va bien";
+
+        // Obtener el ID del nuevo álbum insertado
+        $newAlbumId = mysqli_insert_id($id);
+        mysqli_close($id);
+        header("Location: ./../anadir_foto_album.php?id=$newAlbumId");
+    }
+
 ?>
