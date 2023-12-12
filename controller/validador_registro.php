@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ciudad = $_POST["ciudad"];
     $pais = $_POST["Pais"];
     $foto = $_POST["foto"];
-   
 
     validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais, $foto);
 }
@@ -61,6 +60,16 @@ function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais, $f
         else{
             $html .= '<a href="./../registro.php">Cerrar</a>';
         }
+    } elseif ($fecha == null || !fechaValida($fecha)) {
+        $dialogo = '<dialog>';
+        $html .= '<h3>El formato de la fecha de nacimiento es incorrecto o eres menor de 18 años</h3>';
+        $html .= '<p>Por favor, introduce una fecha de nacimiento válida y asegúrate de que tienes al menos 18 años.</p>';
+        if(isset($_SESSION["IdUsuario"])){
+            $html .= '<a href="./../misDatos.php">Cerrar</a>';
+        }
+        else{
+            $html .= '<a href="./../registro.php">Cerrar</a>';
+        }
     } else {
         // Aquí deberías manejar el envío del formulario en PHP
         // Puedes redirigir a otra página o realizar otras acciones necesarias
@@ -68,17 +77,23 @@ function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais, $f
 
         // OJO AQUÍ SERÍA UN UPDATE O UN INSERT
         // LAS REDIRECCIONES DEBERÍAN ESTAR EN EL MODEL
-        include "./../model/usuarioModel.php";
-        if(isset($_SESSION["IdUsuario"])){
-            updateUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto);
-
-            
+        //en minúsculas
+        $sexo = strtolower($sexo);
+        if($sexo == "hombre" || $sexo == "h"){
+            $sexo = 1;
+        }
+        else if($sexo == "mujer" || $sexo == "m"){
+            $sexo = 0;
         }
         else{
-            
+            $sexo = 2;
+        }
+        include "./../model/usuarioModel.php";
+        if(isset($_SESSION)){
+            updateUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto);
+        }
+        else{
             postUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto);
-
-            
         }
     }
 
@@ -162,6 +177,24 @@ function emailCorrecto($cadena) {
         return false;
     }
     return true;
+}
+
+function fechaValida($fechaNacimiento) {
+    // Comprobar si la fecha de nacimiento es una fecha válida
+    $fecha = DateTime::createFromFormat('Y-m-d', $fechaNacimiento);
+    $erroresFecha = DateTime::getLastErrors();
+    if ($erroresFecha['warning_count'] + $erroresFecha['error_count'] > 0) {
+        return false;
+    }
+
+    // Comprobar si la persona tiene al menos 18 años
+    $hoy = new DateTime();
+    if ($fecha instanceof DateTime) {
+        $edad = $hoy->diff($fecha)->y;
+        return $edad >= 18;
+    } else {
+        return false;
+    }
 }
 
 ?>
