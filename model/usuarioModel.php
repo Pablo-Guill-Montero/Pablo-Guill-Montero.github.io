@@ -39,9 +39,10 @@
     // }
     
     function postUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto){
+        $pwdHash = hash('sha256', $pwd);
         mysqli_query($id, 
             "INSERT INTO `usuarios` (`IdUsuario`, `NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`, `Estilo`, `UltimaConexion`) 
-            VALUES (NULL, '$nombre', '$pwd', '$email', '$sexo', '$fecha', '$ciudad', '$pais', '$foto', NOW(), '1', NOW())");
+            VALUES (NULL, '$nombre', '$pwdHash', '$email', '$sexo', '$fecha', '$ciudad', '$pais', '$foto', NOW(), '1', NOW())");
         if(mysqli_connect_errno() != 0){
             echo mysqli_connect_error();//deberíamos guardar el error para el desarrollador
             exit;
@@ -58,10 +59,11 @@
         $fechaR = $info["FRegistro"];
         $estilo = $info["Estilo"];
         $ultimaFecha = $info["UltimaConexion"];
+        $pwdHash = hash('sha256', $pwd);
         
         mysqli_query($id, 
             "UPDATE usuarios 
-            SET NomUsuario='$nombre', Clave='$pwd', Email='$email', Sexo=$sexo, FNacimiento='$fecha', Ciudad='$ciudad', Pais=$pais, Foto='$foto', FRegistro='$fechaR', Estilo=$estilo, UltimaConexion='$ultimaFecha'
+            SET NomUsuario='$nombre', Clave='$pwdHash', Email='$email', Sexo=$sexo, FNacimiento='$fecha', Ciudad='$ciudad', Pais=$pais, Foto='$foto', FRegistro='$fechaR', Estilo=$estilo, UltimaConexion='$ultimaFecha'
             WHERE IdUsuario=$idUsu");
         
         if(mysqli_connect_errno() != 0){
@@ -70,6 +72,34 @@
         }
     
         mysqli_close($id);
+
+        //Actualizar la sesión
+        $_SESSION['usuario'] = $nombre;
+        $_SESSION['pwd'] = $pwdHash;
+        $_SESSION['email'] = $email;
+        $_SESSION['sexo'] = $sexo;
+        $_SESSION['FNacimiento'] = $fecha;
+        $_SESSION['ciudad'] = $ciudad;
+        $_SESSION['pais'] = $pais;
+        $_SESSION['foto'] = $foto;
+        if(isset($_COOKIE['usuario'])){
+            $expira = time() + 90 * 24 * 60 *  60;
+
+            setcookie(
+                "usuario",
+                 $nombre,
+                 $expira,
+                 '/'
+            );
+
+            setcookie(
+                 "pwd",
+                 $pwdHash, //recordar poner pwdhash
+                 $expira,
+                 '/'
+            );
+
+        }
         header("Location: ./../usuario.php");
     }
     

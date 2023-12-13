@@ -7,8 +7,9 @@ if (isset($_POST['pwd']) && $_POST['pwd']!="") {
     $miPerfil = getPerfil($id, $_SESSION["IdUsuario"]);
     $row = mysqli_fetch_assoc($miPerfil);
     $clave = $row["Clave"];
+    $pwdHash = hash('sha256', $pwd);
     mysqli_free_result($miPerfil);
-    if ($clave == $pwd){
+    if ($clave == $pwdHash){
         deletePerfil($id, $_SESSION["IdUsuario"], $pwd);
         mysqli_close($id);
         header("Location: ./../logout.php");

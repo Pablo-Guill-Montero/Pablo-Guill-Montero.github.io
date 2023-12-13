@@ -9,7 +9,7 @@
 
     $pwdHash = hash('sha256', $pwd);
     //PARA PRUEBAS SIN EL HASH - RECORDAR CAMBIARLO
-    $resultado = login($id, $nombre, $pwd);
+    $resultado = login($id, $nombre, $pwdHash);
 
     //Recogemos la información del estilo aquí también para ahorrar consultas
     function login($id, $nombre, $pwdHash){

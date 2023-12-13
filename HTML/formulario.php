@@ -1,6 +1,6 @@
 <?php
     if(!isset($pais) || $pais == ""){
-        $pais == 1;
+        $pais = 1;
     }
 
         $id = @mysqli_connect("", "gamescape", "gamescape", "gamescape"); //máquina, usuario, contraseña, db
@@ -62,7 +62,7 @@
                         <span>PAÍS DE RESIDENCIA</span>
                         <span>
                             <select name="Pais" id="Pais" >
-                                <option value='<?=$pais?>' selected><?=$nomPais?></option>
+                                <option value='<?=$pais;?>' selected><?=$nomPais;?></option>
                                 <?php
                                     $resultado = getPaises($id);
                                     while($row = mysqli_fetch_assoc($resultado)){//cuando no hay filas devuelve false y termina

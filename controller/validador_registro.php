@@ -89,7 +89,7 @@ function validar($pwd, $nombre, $pwd2, $email, $sexo, $fecha, $ciudad, $pais, $f
             $sexo = 2;
         }
         include "./../model/usuarioModel.php";
-        if(isset($_SESSION)){
+        if(isset($_SESSION["IdUsuario"])){
             updateUsuario($id, $nombre, $pwd, $email, $sexo, $fecha, $ciudad, $pais, $foto);
         }
         else{
