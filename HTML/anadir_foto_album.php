@@ -85,6 +85,13 @@
                                 while($row = mysqli_fetch_assoc($albumes)){//cuando no hay filas devuelve false y termina
                                     echo "<option value='{$row["IdAlbum"]}'>{$row["Titulo"]}</option>";
                                 }
+                                if(mysqli_num_rows($albumes) == 0){
+                                    
+                                    mysqli_free_result($albumes);
+                                    mysqli_close($id);
+                                    header("Location: ./nuevo_album.php");
+                                }
+                                
                                 mysqli_free_result($albumes);
                                 mysqli_close($id);
                             ?>
