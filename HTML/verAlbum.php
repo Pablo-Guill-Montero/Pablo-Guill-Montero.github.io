@@ -26,7 +26,7 @@
             $nomUsuario = $row['NomUsuario'];
             $titulo = $row['Titulo'];
             //function buscar($id, $tituloFoto, $fecha, $pais, $usuario, $album, $cantidad){
-            $resultadoFotos = buscar($id, "", "", "", $nomUsuario, $titulo, -1);
+            $resultadoFotos = buscarEstricto($id, "", "", "", $nomUsuario, $titulo, -1);
             $intervalo = getIntervalo($id, $idAlbum);
             $totalFilas = mysqli_num_rows($resultadoFotos);
             $paises = array();

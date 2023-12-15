@@ -34,7 +34,7 @@
 hereDOC;
                 $nomUsuario = $_SESSION['usuario'];
                 $titulo = $row["Titulo"];
-                $fotosAlbum = buscar($id, "", "", "", $nomUsuario, $titulo, -1);
+                $fotosAlbum = buscarEstricto($id, "", "", "", $nomUsuario, $titulo, -1);
                 $nFotosAlbum = mysqli_num_rows($fotosAlbum);
                 $total += $nFotosAlbum;
                 echo <<<hereDOC

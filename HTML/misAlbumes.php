@@ -10,10 +10,10 @@ $misAlbumes = getAlbumes($id, $idUsuario);
     echo "<article class='album'>";
     echo "<a  href='./verAlbum.php?id={$row["IdAlbum"]}' id='bloque$contador'>";
     echo "<h3>{$row["Titulo"]}</h3>";
-    echo "<br>";
     echo "<spam>{$row["Descripcion"]}</spam>";
     echo "</a>";
     echo "</article>";
+    echo "<br>";
     $contador = $contador + 1;
 }
 mysqli_free_result($misAlbumes);

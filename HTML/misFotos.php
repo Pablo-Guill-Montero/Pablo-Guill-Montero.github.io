@@ -6,7 +6,7 @@
 <?php
 $idUsuario = $_SESSION["IdUsuario"];
 $usuario = $_SESSION["usuario"];
-$misFotos = buscar($id, "", "", "", $usuario, "", -1);
+$misFotos = buscarEstrictoFotos($id, "", "", "", $usuario, "", -1);
 while($row = mysqli_fetch_assoc($misFotos)){//cuando no hay filas devuelve false y termina
     echo <<<hereDOC
     
