@@ -1,6 +1,9 @@
 <?php
     $nombre = "";
     $pwd = "";
+    $autologin=false;
+    $fallo=false;
+
      if(isset($_COOKIE['usuario']) && isset($_COOKIE['pwd']) && isset($_COOKIE['ultima'])){
         $nombre =  $_COOKIE['usuario'];
         $pwd =  $_COOKIE['pwd'];
@@ -19,7 +22,7 @@
 
         //te recordamos pero no estas iniciado en la sesión
         if(!(isset($_SESSION['usuario']) && isset($_SESSION['pwd']))){
-
+            $autologin=true;
             include './model/loginModel.php';
 
             $fecha = $_COOKIE['ultima'];

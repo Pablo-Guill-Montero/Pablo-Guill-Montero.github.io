@@ -2,7 +2,7 @@
     //Lo primero siempre es el session start (siempre que necesitemos la sesion)
     session_start();
     session_destroy();
-    if(isset($_COOKIE['usuario']) && isset($_COOKIE['pwd']) && isset($_COOKIE['ultima'])){             
+    if(isset($_COOKIE['usuario']) || isset($_COOKIE['pwd']) || isset($_COOKIE['ultima'])){             
         // Establecer las cookies con la fecha de caducidad en el pasado
         setcookie('IdUsuario', "", time() - 3600, "/");
         setcookie('usuario', "", time() - 3600, "/");

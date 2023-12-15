@@ -7,7 +7,11 @@
     }
     //echo "Todo va bien";
 
-    $pwdHash = hash('sha256', $pwd);
+    if($autologin){
+        $pwdHash = $pwd;
+    }else{
+        $pwdHash = hash('sha256', $pwd);
+    }
     //PARA PRUEBAS SIN EL HASH - RECORDAR CAMBIARLO
     $resultado = login($id, $nombre, $pwdHash);
 
@@ -125,6 +129,7 @@
         mysqli_close($id);
         header("Location: ./../usuario.php");
     }else{
+        $fallo=true;
         mysqli_free_result($resultado);
         mysqli_close($id);
         header("Location: ./../login.php?modo=1");
